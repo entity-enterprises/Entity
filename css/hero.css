@@ -1,1420 +1,268 @@
 /*==========================================================
-ENTITY ENTERPRISES
-Hero
-Part 1
+
+HERO
+
 ==========================================================*/
 
 .hero{
 
-    position:relative;
+padding:170px 0 120px;
 
-    min-height:100vh;
+background:#ffffff;
 
-    display:flex;
+overflow:hidden;
 
-    align-items:center;
+position:relative;
+background-image:
 
-    overflow:hidden;
+radial-gradient(
 
-    background:var(--clr-background);
+circle at top right,
 
-    isolation:isolate;
+rgba(13,59,140,.05),
 
-}
+transparent 42%
 
-.hero-wrapper{
-
-    width:min(92%,1400px);
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:1.1fr .9fr;
-
-    align-items:center;
-
-    gap:60px;
-
-    position:relative;
-
-    z-index:5;
+);
 
 }
 
+.hero-container{
 
-/*==========================================================
+display:grid;
+position:relative;
 
-CONTENT
+grid-template-columns:1fr 1fr;
 
-==========================================================*/
+align-items:center;
 
-.hero-content{
-
-    position:relative;
-
-    max-width:760px;
-
-    z-index:10;
+gap:80px;
 
 }
 
-.hero-label{
+.hero-tag{
 
-    display:flex;
+display:inline-block;
 
-    align-items:center;
+padding:10px 22px;
 
-    gap:18px;
+border-radius:999px;
 
-    margin-bottom:35px;
+background:#EEF5FF;
 
-    font-size:.8rem;
+color:#0D3B8C;
 
-    text-transform:uppercase;
+font-weight:700;
 
-    letter-spacing:.35em;
+letter-spacing:.12em;
 
-    color:var(--clr-primary);
+font-size:.78rem;
 
-}
-
-.hero-label::before{
-
-    content:"";
-
-    width:70px;
-
-    height:1px;
-
-    background:var(--clr-primary);
+margin-bottom:28px;
 
 }
 
 .hero-title{
 
-    display:flex;
+font-size:clamp(3.8rem,7vw,6.2rem);
 
-    flex-direction:column;
+line-height:1.02;
 
-    line-height:.88;
+letter-spacing:-4px;
 
-    letter-spacing:-.06em;
+font-weight:800;
 
-    font-weight:700;
+max-width:760px;
+color:#081C3A;
 
-    color:var(--clr-heading);
-
-}
-
-.hero-title span{
-
-    display:block;
-
-    overflow:hidden;
-
-}
-
-.hero-title .line-one{
-
-    font-size:clamp(4.8rem,7vw,7.5rem);
-
-}
-
-.hero-title .line-two{
-
-    font-size:clamp(4.8rem,7vw,7.5rem);
-
-    margin-left:70px;
-
-}
-
-.hero-title .line-three{
-
-    font-size:clamp(4.8rem,7vw,7.5rem);
-
-}
-
-.hero-title .line-four{
-
-    font-size:clamp(4.8rem,7vw,7.5rem);
-
-    margin-left:120px;
+margin-bottom:30px;
 
 }
 
 .hero-description{
 
-    margin-top:45px;
+font-size:1.18rem;
 
-    max-width:560px;
+line-height:2;
 
-    font-size:1.05rem;
+max-width:620px;
 
-    line-height:1.9;
+margin:40px 0;
 
-    color:#666;
+color:#667085;
 
 }
 
 .hero-buttons{
 
-    display:flex;
+display:flex;
 
-    gap:20px;
+gap:20px;
 
-    margin-top:55px;
+margin-bottom:60px;
 
-}
-
-
-/*==========================================================
-
-3D AREA
-
-==========================================================*/
-
-.hero-building{
-
-    position:relative;
-
-    width:100%;
-
-    height:760px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+flex-wrap:wrap;
 
 }
 
-#three-container{
+.hero-stats{
 
-    width:100%;
+display:grid;
 
-    height:100%;
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
 
 }
 
+.hero-stats h2{
 
-/*==========================================================
+font-size:3rem;
 
-BACKGROUND NUMBER
+color:#0D3B8C;
 
-==========================================================*/
+margin-bottom:8px;
 
-.hero-number{
+}
 
-    position:absolute;
+.hero-stats span{
 
-    right:-100px;
+color:#6D7683;
 
-    top:50%;
+text-transform:uppercase;
 
-    transform:translateY(-50%);
+letter-spacing:.15em;
 
-    font-size:28rem;
+font-size:.8rem;
 
-    font-weight:700;
+}
 
-    color:rgba(0,0,0,.025);
+.hero-right{
 
-    pointer-events:none;
+position:relative;
+z-index:5;
+
+}
+
+.hero-image{
+
+width:100%;
+
+border-radius:32px;
+
+display:block;
+
+box-shadow:
+
+0 45px 120px rgba(8,28,58,.12);
 
 }
 
 
 /*==========================================================
 
-LIGHT
+FLOATING PROJECT CARD
 
 ==========================================================*/
 
-.hero-light{
+.floating-project-card{
 
-    position:absolute;
+position:absolute;
 
-    width:900px;
+left:-20px;
 
-    height:900px;
+bottom:40px;
 
-    border-radius:50%;
+width:320px;
+border-radius:28px;
 
-    right:-250px;
+padding:34px;
 
-    top:-180px;
+background:rgba(255,255,255,.94);
 
-    background:
+backdrop-filter:blur(30px);
 
-    radial-gradient(
+box-shadow:
 
-        circle,
+0 35px 90px rgba(0,0,0,.12);
 
-        rgba(255,228,170,.32),
+border:1px solid rgba(13,59,140,.08);
 
-        rgba(255,255,255,.18),
+transition:.4s ease;
 
-        transparent 72%
+animation:floatCard 5s ease-in-out infinite;
 
-    );
-
-    filter:blur(60px);
-
-    z-index:-2;
-
-}
-
-.hero-light-secondary{
-
-    position:absolute;
-
-    left:-260px;
-
-    bottom:-260px;
-
-    width:700px;
-
-    height:700px;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        rgba(13,35,70,.06),
-
-        transparent
-
-    );
-
-    filter:blur(90px);
-
-}
-
-
-/*==========================================================
-
-BUILDING GLOW
-
-==========================================================*/
-
-.hero-building::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-
-    height:500px;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        rgba(255,255,255,.55),
-
-        transparent
-
-    );
-
-    filter:blur(40px);
-
-}
-
-
-/*==========================================================
-
-SCROLL
-
-==========================================================*/
-
-.scroll-indicator{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:35px;
-
-    transform:translateX(-50%);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:15px;
-
-    z-index:20;
-
-}
-
-.scroll-text{
-
-    font-size:.72rem;
-
-    letter-spacing:.35em;
-
-    text-transform:uppercase;
-
-    color:#666;
-
-}
-
-.scroll-line{
-
-    width:1px;
-
-    height:80px;
-
-    background:rgba(0,0,0,.12);
-
-    overflow:hidden;
-
-}
-
-.scroll-line::before{
-
-    content:"";
-
-    display:block;
-
-    width:100%;
-
-    height:40px;
-
-    background:var(--clr-primary);
-
-    animation:scrollDown 2s infinite;
-
-}
-
-@keyframes scrollDown{
-
-0%{
-
-transform:translateY(-45px);
-
-}
-
-100%{
-
-transform:translateY(90px);
-
-}
-
-}
-/*==========================================================
-ENTITY ENTERPRISES
-Hero
-Part 2
-Blueprint + CAD Overlay
-==========================================================*/
-
-
-/*==========================================================
-
-BLUEPRINT
-
-==========================================================*/
-
-.hero-blueprint{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-4;
-
-}
-
-.hero-blueprint img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:.18;
-
-    mix-blend-mode:multiply;
-
-    animation:blueprintFloat 30s ease-in-out infinite;
-
-}
-
-
-/*==========================================================
-
-MAIN GRID
-
-==========================================================*/
-
-.hero-grid{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:-5;
-
-    pointer-events:none;
-
-    background-image:
-
-        linear-gradient(
-
-            rgba(13,35,70,.045) 1px,
-
-            transparent 1px
-
-        ),
-
-        linear-gradient(
-
-            90deg,
-
-            rgba(13,35,70,.045) 1px,
-
-            transparent 1px
-
-        );
-
-    background-size:70px 70px;
-
-}
-
-
-/*==========================================================
-
-SECOND GRID
-
-==========================================================*/
-
-.hero-grid::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-
-        linear-gradient(
-
-            rgba(13,35,70,.02) 1px,
-
-            transparent 1px
-
-        ),
-
-        linear-gradient(
-
-            90deg,
-
-            rgba(13,35,70,.02) 1px,
-
-            transparent 1px
-
-        );
-
-    background-size:14px 14px;
-
-}
-
-
-/*==========================================================
-
-ENGINEERING FRAME
-
-==========================================================*/
-
-.hero-grid::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:40px;
-
-    border:1px solid rgba(13,35,70,.08);
-
-}
-
-
-/*==========================================================
-
-CAD CIRCLES
-
-==========================================================*/
-
-.cad-circle{
-
-    position:absolute;
-
-    border:1px solid rgba(13,35,70,.08);
-
-    border-radius:50%;
-
-}
-
-.cad-circle.one{
-
-    width:180px;
-
-    height:180px;
-
-    top:14%;
-
-    right:12%;
-
-}
-
-.cad-circle.two{
-
-    width:300px;
-
-    height:300px;
-
-    bottom:10%;
-
-    left:8%;
-
-}
-
-.cad-circle.three{
-
-    width:100px;
-
-    height:100px;
-
-    bottom:28%;
-
-    right:28%;
-
-}
-
-
-/*==========================================================
-
-AXIS
-
-==========================================================*/
-
-.axis-x{
-
-    position:absolute;
-
-    top:50%;
-
-    left:0;
-
-    width:100%;
-
-    height:1px;
-
-    background:
-
-    linear-gradient(
-
-        transparent,
-
-        rgba(13,35,70,.08),
-
-        transparent
-
-    );
-
-}
-
-.axis-y{
-
-    position:absolute;
-
-    left:50%;
-
-    top:0;
-
-    width:1px;
-
-    height:100%;
-
-    background:
-
-    linear-gradient(
-
-        transparent,
-
-        rgba(13,35,70,.08),
-
-        transparent
-
-    );
-
-}
-
-
-/*==========================================================
-
-MEASUREMENTS
-
-==========================================================*/
-
-.measure{
-
-    position:absolute;
-
-    font-family:monospace;
-
-    font-size:.72rem;
-
-    letter-spacing:.18em;
-
-    color:rgba(13,35,70,.4);
-
-}
-
-.measure.one{
-
-    left:90px;
-
-    top:180px;
-
-}
-
-.measure.two{
-
-    right:120px;
-
-    top:140px;
-
-}
-
-.measure.three{
-
-    left:120px;
-
-    bottom:160px;
-
-}
-
-.measure.four{
-
-    right:160px;
-
-    bottom:120px;
-
-}
-
-
-/*==========================================================
-
-DIMENSION LINES
-
-==========================================================*/
-
-.dimension-line{
-
-    position:absolute;
-
-    background:rgba(13,35,70,.1);
-
-}
-
-.dimension-horizontal{
-
-    width:320px;
-
-    height:1px;
-
-}
-
-.dimension-vertical{
-
-    width:1px;
-
-    height:260px;
-
-}
-
-.dimension-line::before,
-
-.dimension-line::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:7px;
-
-    height:7px;
-
-    border:1px solid rgba(13,35,70,.18);
-
-    background:white;
-
-    transform:rotate(45deg);
-
-}
-
-.dimension-horizontal::before{
-
-    left:-4px;
-
-    top:-3px;
-
-}
-
-.dimension-horizontal::after{
-
-    right:-4px;
-
-    top:-3px;
-
-}
-
-.dimension-vertical::before{
-
-    left:-3px;
-
-    top:-4px;
-
-}
-
-.dimension-vertical::after{
-
-    left:-3px;
-
-    bottom:-4px;
-
-}
-
-
-/*==========================================================
-
-LABELS
-
-==========================================================*/
-
-.blueprint-label{
-
-    position:absolute;
-
-    font-size:.72rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:.25em;
-
-    color:rgba(13,35,70,.38);
-
-}
-
-.label-a{
-
-    top:12%;
-
-    left:7%;
-
-}
-
-.label-b{
-
-    right:10%;
-
-    top:28%;
-
-}
-
-.label-c{
-
-    left:10%;
-
-    bottom:18%;
-
-}
-
-.label-d{
-
-    right:12%;
-
-    bottom:10%;
-
-}
-
-
-/*==========================================================
-
-COORDINATES
-
-==========================================================*/
-
-.coordinate{
-
-    position:absolute;
-
-    font-size:.7rem;
-
-    font-family:monospace;
-
-    color:rgba(13,35,70,.25);
-
-}
-
-.coordinate.one{
-
-    top:90px;
-
-    left:60px;
-
 }
 
-.coordinate.two{
+.floating-project-card:hover{
 
-    bottom:70px;
+transform:translateY(-10px);
 
-    right:70px;
-
-}
-
-
-/*==========================================================
-
-ENGINEERING NOTES
-
-==========================================================*/
-
-.arch-note{
-
-    position:absolute;
-
-    width:180px;
-
-    font-size:.72rem;
-
-    line-height:1.8;
-
-    color:rgba(13,35,70,.32);
-
-}
-
-.note-left{
-
-    left:70px;
-
-    bottom:210px;
-
-}
-
-.note-right{
-
-    right:60px;
-
-    top:320px;
-
-}
-
-
-/*==========================================================
-
-GRID ANIMATION
-
-==========================================================*/
-
-@keyframes blueprintFloat{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-25%{
-
-transform:translate(-10px,-4px);
-
-}
-
-50%{
-
-transform:translate(-18px,8px);
-
-}
-
-75%{
-
-transform:translate(8px,4px);
-
-}
-
-100%{
-
-transform:translate(0,0);
-
-}
-
-}
-/*==========================================================
-ENTITY ENTERPRISES
-Hero
-Part 3
-Glass • Depth • Ambient • Premium Effects
-==========================================================*/
-
-
-/*==========================================================
-
-BUILDING CONTAINER
-
-==========================================================*/
-
-.hero-building{
-
-    position:relative;
-
-    isolation:isolate;
-
-    perspective:1800px;
-
-    transform-style:preserve-3d;
-
-}
-
-.hero-building canvas{
-
-    position:relative;
-
-    z-index:5;
-
-}
-
-
-/*==========================================================
-
-SOFT SHADOW
-
-==========================================================*/
-
-.hero-building::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:45px;
-
-    width:420px;
-
-    height:65px;
-
-    transform:translateX(-50%);
-
-    border-radius:50%;
-
-    background:rgba(0,0,0,.18);
-
-    filter:blur(35px);
-
-    opacity:.25;
-
-    z-index:0;
-
-}
-
-
-/*==========================================================
-
-GLASS REFLECTION
-
-==========================================================*/
-
-.hero-glass{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:12;
-
-    overflow:hidden;
-
-}
-
-.hero-glass::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-30%;
-
-    left:-40%;
-
-    width:35%;
-
-    height:170%;
-
-    transform:rotate(18deg);
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        rgba(255,255,255,.45),
-
-        transparent
-
-    );
-
-    filter:blur(8px);
-
-    animation:glassMove 9s ease-in-out infinite;
-
-}
-
-
-/*==========================================================
-
-VIGNETTE
-
-==========================================================*/
-
-.hero-vignette{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        transparent 48%,
-
-        rgba(0,0,0,.08) 100%
-
-    );
-
-    z-index:8;
-
-}
-
-
-/*==========================================================
-
-DEPTH OVERLAY
-
-==========================================================*/
-
-.hero-depth{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-
-    linear-gradient(
-
-        180deg,
-
-        rgba(255,255,255,.35),
-
-        transparent 28%,
-
-        transparent 72%,
-
-        rgba(0,0,0,.05)
-
-    );
-
-    z-index:6;
-
-}
-
-
-/*==========================================================
-
-LIGHT BEAM
-
-==========================================================*/
-
-.hero-beam{
-
-    position:absolute;
-
-    top:-10%;
-
-    right:18%;
-
-    width:340px;
-
-    height:1200px;
-
-    transform:rotate(12deg);
-
-    background:
-
-    linear-gradient(
-
-        rgba(255,255,255,.18),
-
-        transparent
-
-    );
-
-    filter:blur(80px);
-
-    opacity:.45;
-
-    pointer-events:none;
-
-    z-index:2;
-
-}
-
-
-/*==========================================================
-
-BACKGROUND GRADIENT
-
-==========================================================*/
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-
-        circle at top right,
-
-        rgba(255,255,255,.95),
-
-        transparent 45%
-
-    ),
-
-    radial-gradient(
-
-        circle at bottom left,
-
-        rgba(13,35,70,.04),
-
-        transparent 50%
-
-    );
-
-    z-index:-9;
-
-}
-
-
-/*==========================================================
-
-NOISE
-
-==========================================================*/
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:.025;
-
-    pointer-events:none;
-
-    background-image:
-
-    radial-gradient(circle,#000 1px,transparent 1px);
-
-    background-size:9px 9px;
-
-    z-index:20;
-
 }
-
-
-/*==========================================================
-
-FLOATING DOTS
-
-==========================================================*/
 
-.hero-dot{
+.floating-project-card span{
 
-    position:absolute;
+display:inline-block;
 
-    width:5px;
+font-size:.75rem;
 
-    height:5px;
+font-weight:700;
 
-    border-radius:50%;
-
-    background:rgba(13,35,70,.15);
-
-}
-
-.dot-one{
-
-    left:12%;
-
-    top:20%;
-
-}
+letter-spacing:.2em;
 
-.dot-two{
+text-transform:uppercase;
 
-    left:82%;
+color:#0D3B8C;
 
-    top:30%;
+margin-bottom:15px;
 
 }
 
-.dot-three{
+.floating-project-card h3{
 
-    left:20%;
+font-size:1.45rem;
 
-    bottom:18%;
+line-height:1.4;
 
-}
-
-.dot-four{
+color:#081C3A;
 
-    right:15%;
+margin-bottom:16px;
 
-    bottom:12%;
-
 }
-
-
-/*==========================================================
-
-AMBIENT CIRCLES
-
-==========================================================*/
-
-.ambient-circle{
 
-    position:absolute;
+.floating-project-card p{
 
-    border-radius:50%;
+color:#6A7280;
 
-    border:1px solid rgba(13,35,70,.05);
+margin-bottom:22px;
 
-    animation:ambientScale 12s ease-in-out infinite;
+line-height:1.7;
 
 }
 
-.ambient-one{
+.floating-project-card a{
 
-    width:480px;
+display:inline-flex;
 
-    height:480px;
+align-items:center;
 
-    left:-120px;
+gap:8px;
 
-    bottom:-140px;
+text-decoration:none;
 
-}
-
-.ambient-two{
-
-    width:620px;
-
-    height:620px;
+font-weight:700;
 
-    right:-220px;
+color:#0D3B8C;
 
-    top:-180px;
+transition:.3s;
 
-    animation-delay:2s;
-
 }
-
-
-/*==========================================================
-
-GLOW
 
-==========================================================*/
+.floating-project-card a:hover{
 
-.hero-glow{
+transform:translateX(6px);
 
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    width:520px;
-
-    height:520px;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        rgba(255,255,255,.42),
-
-        transparent
-
-    );
-
-    filter:blur(60px);
-
-    opacity:.75;
-
-    z-index:1;
-
 }
-
 
 /*==========================================================
 
@@ -1422,481 +270,494 @@ ANIMATIONS
 
 ==========================================================*/
 
-@keyframes glassMove{
+@keyframes floatCard{
 
 0%{
 
-left:-40%;
-
-}
-
-100%{
-
-left:160%;
-
-}
-
-}
-
-@keyframes ambientScale{
-
-0%,100%{
-
-transform:scale(1);
-
-opacity:.4;
+transform:translateY(0px);
 
 }
 
 50%{
 
-transform:scale(1.05);
+transform:translateY(-12px);
 
-opacity:.8;
+}
+
+100%{
+
+transform:translateY(0px);
 
 }
 
 }
 /*==========================================================
-ENTITY ENTERPRISES
-Hero
-Part 4
-Final Polish
+
+PREMIUM HERO BACKGROUND
+
 ==========================================================*/
 
+.hero{
 
-/*==========================================================
-CONTENT ANIMATION HELPERS
-==========================================================*/
+position:relative;
 
-.hero-label,
-.hero-title,
-.hero-description,
-.hero-buttons,
-.scroll-indicator{
+overflow:hidden;
 
-    will-change:transform,opacity;
-
-}
-
-.hero-title span{
-
-    display:block;
-
-    overflow:hidden;
-
-}
-
-.hero-title span>*{
-
-    display:block;
-
-}
-
-
-/*==========================================================
-BUTTON SPACING
-==========================================================*/
-
-.hero-buttons .btn{
-
-    min-width:220px;
-
-    justify-content:center;
-
-}
-
-
-/*==========================================================
-TEXT SELECTION
-==========================================================*/
-
-.hero ::selection{
-
-    background:var(--clr-primary);
-
-    color:#fff;
-
-}
-
-
-/*==========================================================
-BUILDING HOVER
-==========================================================*/
-
-.hero-building{
-
-    transition:
-
-    transform .8s cubic-bezier(.16,1,.3,1),
-
-    filter .8s;
-
-}
-
-.hero:hover .hero-building{
-
-    filter:drop-shadow(0 40px 80px rgba(0,0,0,.12));
-
-}
-
-
-/*==========================================================
-BLUEPRINT FADE
-==========================================================*/
-
-.hero-blueprint{
-
-    mask-image:
-
-    linear-gradient(
-
-    to bottom,
-
-    transparent,
-
-    black 15%,
-
-    black 85%,
-
-    transparent
-
-    );
-
-}
-
-
-/*==========================================================
-GRID FADE
-==========================================================*/
-
-.hero-grid{
-
-    mask-image:
-
-    radial-gradient(
-
-    circle,
-
-    black 45%,
-
-    transparent 100%
-
-    );
-
-}
-
-
-/*==========================================================
-LIGHT BLEND
-==========================================================*/
-
-.hero-light,
-
-.hero-light-secondary{
-
-    mix-blend-mode:screen;
-
-}
-
-
-/*==========================================================
-THREE CONTAINER
-==========================================================*/
-
-#three-container{
-
-    position:relative;
-
-    z-index:5;
-
-    transform-style:preserve-3d;
-
-    transition:transform .6s ease;
-
-}
-
-.hero:hover #three-container{
-
-    transform:translateY(-8px);
-
-}
-
-
-/*==========================================================
-SCROLL SHADOW
-==========================================================*/
-
-.hero.scrolled{
-
-    box-shadow:
-
-    inset 0 -120px 120px rgba(255,255,255,.95);
-
-}
-
-
-/*==========================================================
-DECORATIVE LINES
-==========================================================*/
-
-.hero-edge-top,
-
-.hero-edge-bottom{
-
-    position:absolute;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:min(92%,1400px);
-
-    height:1px;
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(13,35,70,.08),
-
-    transparent
-
-    );
-
-    pointer-events:none;
-
-}
-
-.hero-edge-top{
-
-    top:90px;
-
-}
-
-.hero-edge-bottom{
-
-    bottom:40px;
-
-}
-
-
-/*==========================================================
-IMAGE RENDERING
-==========================================================*/
-
-.hero img{
-
-    user-select:none;
-
-    -webkit-user-drag:none;
-
-}
-
-
-/*==========================================================
-PERFORMANCE
-==========================================================*/
-
-.hero,
-
-.hero *{
-
-    backface-visibility:hidden;
-
-}
-
-.hero-building,
-
-.hero-grid,
-
-.hero-blueprint,
-
-.hero-light,
-
-.hero-light-secondary{
-
-    transform:translateZ(0);
-
-}
-
-
-/*==========================================================
-ACCESSIBILITY
-==========================================================*/
-
-@media (prefers-reduced-motion: reduce){
-
-*{
-
-animation:none !important;
-
-transition:none !important;
-
-scroll-behavior:auto !important;
-
-}
-
-}
-
-
-/*==========================================================
-TABLET
-==========================================================*/
-
-@media(max-width:1200px){
-
-.hero-wrapper{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-gap:80px;
-
-}
-
-.hero-content{
+min-height:100vh;
 
 display:flex;
 
-flex-direction:column;
+align-items:center;
+
+background:
+linear-gradient(
+180deg,
+#FFFFFF 0%,
+#FBFCFE 100%
+);
+
+}
+
+/* Blueprint Grid */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+linear-gradient(
+rgba(13,59,140,.035) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(13,59,140,.035) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+/* Soft Radial Glow */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+right:-180px;
+
+top:-180px;
+
+width:900px;
+
+height:900px;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(13,59,140,.12),
+
+rgba(13,59,140,.04),
+
+transparent 72%
+
+);
+
+filter:blur(10px);
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+pointer-events:none;
+
+z-index:0;
+}
+
+
+.hero-container{
+
+position:relative;
+
+z-index:2;
+
+}
+/*==========================================================
+
+FINAL HERO VISUALS
+
+==========================================================*/
+
+.hero-right{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
 
 align-items:center;
 
 }
 
-.hero-title .line-two,
-
-.hero-title .line-four{
-
-margin-left:0;
-
-}
-
-.hero-description{
-
-max-width:700px;
-
-}
-
-.hero-building{
+.hero-image{
 
 width:100%;
 
-height:600px;
+max-width:650px;
+
+display:block;
+
+border-radius:32px;
+
+border:1px solid rgba(13,59,140,.08);
+
+box-shadow:
+
+0 70px 150px rgba(8,28,58,.14);
+filter:saturate(108%) contrast(102%);
+
+transition:
+transform .6s ease,
+box-shadow .6s ease;
+
+position:relative;
+
+z-index:2;
 
 }
 
-}
+.hero-image:hover{
 
+transform:translateY(-8px);
 
-/*==========================================================
-MOBILE
-==========================================================*/
-
-@media(max-width:768px){
-
-.hero{
-
-padding-top:120px;
-
-min-height:auto;
+box-shadow:
+0 55px 120px rgba(8,28,58,.15);
 
 }
 
-.hero-title{
+.floating-project-card{
 
-font-size:68%;
+position:absolute;
+
+left:-45px;
+
+bottom:25px;
+
+width:330px;
+
+padding:30px;
+
+background:rgba(255,255,255,.94);
+
+backdrop-filter:blur(24px);
+
+border:1px solid rgba(13,59,140,.08);
+
+border-radius:24px;
+
+box-shadow:
+0 25px 70px rgba(8,28,58,.12);
+
+z-index:3;
+
+transition:all .35s ease;
 
 }
 
-.hero-description{
+.floating-project-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.floating-project-card span{
+
+display:block;
+
+font-size:.72rem;
+
+font-weight:700;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:#0D3B8C;
+
+margin-bottom:12px;
+
+}
+
+.floating-project-card h3{
+
+font-size:1.35rem;
+
+line-height:1.35;
+
+color:#081C3A;
+
+margin-bottom:12px;
+
+}
+
+.floating-project-card p{
 
 font-size:.95rem;
 
-line-height:1.8;
+color:#64748B;
+
+margin-bottom:18px;
 
 }
 
-.hero-buttons{
+.floating-project-card a{
 
-flex-direction:column;
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+font-weight:600;
+
+text-decoration:none;
+
+color:#0D3B8C;
+
+}
+
+.floating-project-card a:hover{
+
+gap:14px;
+
+}
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+.floating-project-card{
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+/*==========================================================
+
+ARCHITECTURAL BLUEPRINT LAYER
+
+==========================================================*/
+
+.hero-blueprint{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+/* Vertical Lines */
+
+.hero-blueprint::before{
+
+content:"";
+
+position:absolute;
+
+left:8%;
+
+top:0;
+
+height:100%;
+
+width:1px;
+
+background:linear-gradient(
+
+to bottom,
+
+transparent,
+
+rgba(13,59,140,.08),
+
+transparent
+
+);
+
+box-shadow:
+
+220px 0 rgba(13,59,140,.04),
+
+440px 0 rgba(13,59,140,.04),
+
+660px 0 rgba(13,59,140,.04),
+
+880px 0 rgba(13,59,140,.04);
+
+}
+
+/* Horizontal Lines */
+
+.hero-blueprint::after{
+
+content:"";
+
+position:absolute;
+
+top:12%;
+
+left:0;
 
 width:100%;
 
-}
+height:1px;
 
-.hero-buttons .btn{
+background:linear-gradient(
 
-width:100%;
+90deg,
 
-}
+transparent,
 
-.hero-building{
+rgba(13,59,140,.08),
 
-height:380px;
+transparent
 
-}
+);
 
-.hero-grid,
+box-shadow:
 
-.hero-blueprint,
+0 180px rgba(13,59,140,.04),
 
-.hero-vignette,
+0 360px rgba(13,59,140,.04),
 
-.hero-depth,
-
-.hero-beam,
-
-.hero-glow,
-
-.ambient-circle,
-
-.hero-dot,
-
-.hero-edge-top,
-
-.hero-edge-bottom{
-
-display:none;
+0 540px rgba(13,59,140,.04);
 
 }
-
-}
-
-
 /*==========================================================
-SMALL DEVICES
+
+ARCHITECTURAL FRAME
+
 ==========================================================*/
 
-@media(max-width:480px){
+.hero-image-wrapper{
 
-.hero-title{
+position:relative;
 
-font-size:58%;
-
-}
-
-.hero-building{
-
-height:300px;
+display:inline-block;
 
 }
 
-.scroll-indicator{
+/* Top Left */
 
-display:none;
+.hero-image-wrapper::before{
+
+content:"";
+
+position:absolute;
+
+top:-18px;
+
+left:-18px;
+
+width:70px;
+
+height:70px;
+
+border-top:2px solid rgba(13,59,140,.22);
+
+border-left:2px solid rgba(13,59,140,.22);
 
 }
 
+/* Bottom Right */
+
+.hero-image-wrapper::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-18px;
+
+right:-18px;
+
+width:70px;
+
+height:70px;
+
+border-bottom:2px solid rgba(13,59,140,.22);
+
+border-right:2px solid rgba(13,59,140,.22);
+
 }
-
-
 /*==========================================================
-END OF HERO
+
+SECTION NUMBER
+
 ==========================================================*/
+
+.hero-tag{
+
+position:relative;
+
+padding-left:72px;
+
+}
+
+.hero-tag::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:50%;
+
+width:55px;
+
+height:1px;
+
+background:#0D3B8C;
+
+opacity:.35;
+
+transform:translateY(-50%);
+
+}

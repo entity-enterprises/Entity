@@ -1,4 +1,4 @@
-/*==========================================================
+﻿/*==========================================================
 ENTITY ENTERPRISES
 Animations
 ==========================================================*/
@@ -725,5 +725,112 @@ transform:translate(-50%,-50%);
 transform:translate(-50%,-46%);
 
 }
+
+}
+/*==========================================================
+
+CTA
+
+==========================================================*/
+
+.cta-overlay{
+
+animation:gridAnimation 20s linear infinite;
+
+}
+
+@keyframes gridAnimation{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(60px);
+
+}
+
+}
+.reveal{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+.revealed{
+
+opacity:1;
+
+transform:none;
+
+transition:
+
+opacity .9s ease,
+
+transform .9s ease;
+
+}
+/*==========================================================
+
+PAGE TRANSITIONS
+
+==========================================================*/
+
+body{
+
+opacity:0;
+
+transition:
+
+opacity .45s ease,
+
+transform .45s ease;
+
+}
+
+body.page-loaded{
+
+opacity:1;
+
+}
+
+body.page-exit{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:url("../assets/illustrations/noise.png");
+
+opacity:.03;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+img{
+
+transition:transform 1s ease;
+
+}
+
+section:hover img{
+
+transform:scale(1.03);
 
 }

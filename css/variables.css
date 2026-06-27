@@ -1,4 +1,4 @@
-/*==========================================================
+﻿/*==========================================================
 ENTITY ENTERPRISES
 Design System
 ==========================================================*/
@@ -9,42 +9,42 @@ Design System
 Brand
 ==========================================================*/
 
---clr-primary:#0D2346;
---clr-primary-light:#214A82;
---clr-primary-dark:#08152C;
+--clr-primary:#0D3B8C;
+--clr-primary-light:#1E5BBF;
+--clr-primary-dark:#081C3A;
 
---clr-secondary:#C6A86B;
---clr-accent:#E6D3AE;
+--clr-secondary:#081C3A;
+--clr-accent:#0D3B8C;
 
 
 /*==========================================================
 Neutrals
 ==========================================================*/
 
---clr-background:#F8F8F6;
+--clr-background:#F8FAFC;
 
 --clr-surface:#FFFFFF;
 
---clr-heading:#111827;
+--clr-heading:#081C3A;
 
---clr-text:#5F6368;
+--clr-text:#334155;
 
---clr-muted:#8B9098;
+--clr-muted:#64748B;
 
---clr-border:rgba(17,24,39,.08);
+--clr-border:rgba(8,28,58,.08);
 
---clr-border-strong:rgba(17,24,39,.14);
+--clr-border-strong:rgba(8,28,58,.14);
 
 
 /*==========================================================
 Glass
 ==========================================================*/
 
---glass-bg:rgba(255,255,255,.62);
+--glass-bg:rgba(255,255,255,.75);
 
---glass-border:rgba(255,255,255,.45);
+--glass-border:rgba(255,255,255,.5);
 
---glass-shadow:0 20px 80px rgba(0,0,0,.08);
+--glass-shadow:0 20px 80px rgba(8,28,58,.05);
 
 --glass-blur:20px;
 
@@ -59,9 +59,9 @@ linear-gradient(
 
 135deg,
 
-#0D2346,
+#0D3B8C,
 
-#214A82
+#081C3A
 
 );
 
@@ -71,9 +71,9 @@ linear-gradient(
 
 135deg,
 
-#B58B47,
+#0D3B8C,
 
-#E8D8B3
+#1E5BBF
 
 );
 
@@ -85,7 +85,7 @@ linear-gradient(
 
 #FFFFFF,
 
-#F6F6F6
+#F8FAFC
 
 );
 
@@ -312,5 +312,12 @@ Section Gap
 ==========================================================*/
 
 --section-gap:140px;
+
+}
+::selection{
+
+background:#0D2346;
+
+color:white;
 
 }

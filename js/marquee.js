@@ -1,21 +1,17 @@
 ﻿/*==========================================================
 
-CONTACT PAGE
+CLIENT MARQUEE
 
 ==========================================================*/
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-document.querySelectorAll(".faq-question").forEach(button=>{
+const marquee=document.querySelector(".client-track");
 
-button.onclick=()=>{
+if(!marquee) return;
 
-const item=button.parentElement;
+const clone=marquee.innerHTML;
 
-item.classList.toggle("active");
-
-};
-
-});
+marquee.innerHTML+=clone;
 
 });

@@ -3,16 +3,20 @@ ENTITY ENTERPRISES
 Main Controller
 ==========================================================*/
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     if (typeof initNavbar === "function") {
         initNavbar();
     }
 
+    loadFooter();
+
     if (typeof initHero === "function") {
         initHero();
     }
-    initLoader();
+    if (typeof initLoader === "function") {
+        initLoader();
+    }
     initCursor();
     initReveal();
     initCounters();
@@ -213,77 +217,79 @@ Premium Loader
 
 ==========================================================*/
 
-function initLoader(){
+function initLoader() {
 
-const loader=document.getElementById("loader");
+    const loader = document.getElementById("loader");
 
-const bar=document.querySelector(".loader-progress-bar");
+    const bar = document.querySelector(".loader-progress-bar");
 
-const status=document.querySelector(".loader-status");
+    const status = document.querySelector(".loader-status");
 
-if(!loader) return;
+    if (!loader) return;
 
-const tl=gsap.timeline();
+    if (typeof gsap === "undefined") return;
 
-tl.to(bar,{
+    const tl = gsap.timeline();
 
-width:"30%",
+    tl.to(bar, {
 
-duration:.8
+        width: "30%",
 
-})
+        duration: .8
 
-.call(()=>{
+    })
 
-status.textContent="Drawing Blueprint...";
+        .call(() => {
 
-})
+            status.textContent = "Drawing Blueprint...";
 
-.to(bar,{
+        })
 
-width:"65%",
+        .to(bar, {
 
-duration:.8
+            width: "65%",
 
-})
+            duration: .8
 
-.call(()=>{
+        })
 
-status.textContent="Constructing Structure...";
+        .call(() => {
 
-})
+            status.textContent = "Constructing Structure...";
 
-.to(bar,{
+        })
 
-width:"100%",
+        .to(bar, {
 
-duration:.8
+            width: "100%",
 
-})
+            duration: .8
 
-.call(()=>{
+        })
 
-status.textContent="Ready";
+        .call(() => {
 
-})
+            status.textContent = "Ready";
 
-.to(loader,{
+        })
 
-delay:.3,
+        .to(loader, {
 
-yPercent:-100,
+            delay: .3,
 
-duration:1.2,
+            yPercent: -100,
 
-ease:"power4.inOut",
+            duration: 1.2,
 
-onComplete(){
+            ease: "power4.inOut",
 
-loader.remove();
+            onComplete() {
 
-}
+                loader.remove();
 
-});
+            }
+
+        });
 
 }
 /*==========================================================
@@ -291,7 +297,7 @@ Page Loaded
 ==========================================================*/
 
 window.addEventListener("load", () => {
-    
+
 
     document.body.classList.add("loaded");
 
@@ -304,66 +310,66 @@ Console
 
 console.log(
 
-"%cENTITY ENTERPRISES",
+    "%cENTITY ENTERPRISES",
 
-"font-size:20px;font-weight:bold;color:#0D2346"
+    "font-size:20px;font-weight:bold;color:#0D2346"
 
 );
 
 console.log(
 
-"%cArchitecture Experience Loaded",
+    "%cArchitecture Experience Loaded",
 
-"color:#888"
+    "color:#888"
 
 );
-function initHorizontalProjects(){
+function initHorizontalProjects() {
 
-const slider=document.querySelector(".projects-slider");
+    const slider = document.querySelector(".projects-slider");
 
-if(!slider) return;
+    if (!slider) return;
 
-let isDown=false;
+    let isDown = false;
 
-let startX;
+    let startX;
 
-let scrollLeft;
+    let scrollLeft;
 
-slider.addEventListener("mousedown",(e)=>{
+    slider.addEventListener("mousedown", (e) => {
 
-isDown=true;
+        isDown = true;
 
-startX=e.pageX-slider.offsetLeft;
+        startX = e.pageX - slider.offsetLeft;
 
-scrollLeft=slider.scrollLeft;
+        scrollLeft = slider.scrollLeft;
 
-});
+    });
 
-slider.addEventListener("mouseleave",()=>{
+    slider.addEventListener("mouseleave", () => {
 
-isDown=false;
+        isDown = false;
 
-});
+    });
 
-slider.addEventListener("mouseup",()=>{
+    slider.addEventListener("mouseup", () => {
 
-isDown=false;
+        isDown = false;
 
-});
+    });
 
-slider.addEventListener("mousemove",(e)=>{
+    slider.addEventListener("mousemove", (e) => {
 
-if(!isDown) return;
+        if (!isDown) return;
 
-e.preventDefault();
+        e.preventDefault();
 
-const x=e.pageX-slider.offsetLeft;
+        const x = e.pageX - slider.offsetLeft;
 
-const walk=(x-startX)*2;
+        const walk = (x - startX) * 2;
 
-slider.scrollLeft=scrollLeft-walk;
+        slider.scrollLeft = scrollLeft - walk;
 
-});
+    });
 
 }
 /*==========================================================
@@ -372,33 +378,33 @@ Services Animation
 
 ==========================================================*/
 
-function initServices(){
+function initServices() {
 
-const cards=document.querySelectorAll(".service-panel");
+    const cards = document.querySelectorAll(".service-panel");
 
-if(!cards.length) return;
+    if (!cards.length) return;
 
-const observer=new IntersectionObserver((entries)=>{
+    const observer = new IntersectionObserver((entries) => {
 
-entries.forEach(entry=>{
+        entries.forEach(entry => {
 
-if(entry.isIntersecting){
+            if (entry.isIntersecting) {
 
-cards.forEach(c=>c.classList.remove("active"));
+                cards.forEach(c => c.classList.remove("active"));
 
-entry.target.classList.add("active");
+                entry.target.classList.add("active");
 
-}
+            }
 
-});
+        });
 
-},{
+    }, {
 
-threshold:.6
+        threshold: .6
 
-});
+    });
 
-cards.forEach(card=>observer.observe(card));
+    cards.forEach(card => observer.observe(card));
 
 }
 /*==========================================================
@@ -407,39 +413,49 @@ Timeline
 
 ==========================================================*/
 
-function initTimeline(){
+function initTimeline() {
 
-const items=document.querySelectorAll(".timeline-item");
+    const timeline = document.querySelector(".timeline");
 
-const progress=document.querySelector(".timeline-progress");
+    const progress = document.querySelector(".timeline-progress");
 
-if(!items.length) return;
+    const steps = document.querySelectorAll(".timeline-step");
 
-const observer=new IntersectionObserver((entries)=>{
+    if (!timeline || !progress || !steps.length) return;
 
-entries.forEach(entry=>{
+    // Initial check on load
+    steps.forEach(step => {
+        const r = step.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.8) {
+            step.classList.add("active");
+        }
+    });
 
-if(entry.isIntersecting){
+    window.addEventListener("scroll", () => {
 
-entry.target.classList.add("active");
+        const rect = timeline.getBoundingClientRect();
 
-const index=[...items].indexOf(entry.target);
+        const total = timeline.offsetHeight;
 
-const percentage=((index+1)/items.length)*100;
+        let percent = ((window.innerHeight - rect.top) / total) * 100;
 
-progress.style.height=percentage+"%";
+        percent = Math.max(0, Math.min(percent, 100));
 
-}
+        progress.style.height = percent + "%";
 
-});
+        steps.forEach(step => {
 
-},{
+            const r = step.getBoundingClientRect();
 
-threshold:.5
+            if (r.top < window.innerHeight * 0.8) {
 
-});
+                step.classList.add("active");
 
-items.forEach(item=>observer.observe(item));
+            }
+
+        });
+
+    });
 
 }
 
@@ -449,21 +465,21 @@ Back To Top
 
 ==========================================================*/
 
-const topBtn=document.getElementById("backTop");
+const topBtn = document.getElementById("backTop");
 
-if(topBtn){
+if (topBtn) {
 
-topBtn.onclick=()=>{
+    topBtn.onclick = () => {
 
-window.scrollTo({
+        window.scrollTo({
 
-top:0,
+            top: 0,
 
-behavior:"smooth"
+            behavior: "smooth"
 
-});
+        });
 
-};
+    };
 
 }
 /*==========================================================
@@ -472,34 +488,58 @@ Project Hover Preview
 
 ==========================================================*/
 
-const preview=document.getElementById("image-preview");
+const preview = document.getElementById("image-preview");
+const previewImage = document.getElementById("preview-image");
 
-const previewImage=document.getElementById("preview-image");
+if (preview && previewImage) {
 
-document.querySelectorAll(".project-card").forEach(card=>{
+    document.querySelectorAll(".project-card").forEach(card => {
 
-const img=card.querySelector("img");
+        const img = card.querySelector("img");
 
-card.addEventListener("mouseenter",()=>{
+        card.addEventListener("mouseenter", () => {
 
-preview.classList.add("active");
+            preview.classList.add("active");
+            previewImage.src = img.src;
 
-previewImage.src=img.src;
+        });
 
-});
+        card.addEventListener("mouseleave", () => {
 
-card.addEventListener("mouseleave",()=>{
+            preview.classList.remove("active");
 
-preview.classList.remove("active");
+        });
 
-});
+        card.addEventListener("mousemove", (e) => {
 
-card.addEventListener("mousemove",(e)=>{
+            preview.style.left = e.clientX + 40 + "px";
+            preview.style.top = e.clientY + 40 + "px";
 
-preview.style.left=e.clientX+40+"px";
+        });
 
-preview.style.top=e.clientY+40+"px";
+    });
 
-});
+}
 
-});
+// Removed duplicate blocks
+async function loadFooter() {
+
+    const footer = document.getElementById("footer");
+
+    if (!footer) return;
+
+    try {
+
+        const response = await fetch("components/footer.html");
+
+        footer.innerHTML = await response.text();
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+    }
+
+}

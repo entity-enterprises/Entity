@@ -1,99 +1,52 @@
-function initNavbar() {
+/*==========================================================
+PREMIUM NAVBAR
+==========================================================*/
 
-    const navbar = document.getElementById("navbar");
+async function initNavbar() {
+    const navbarContainer = document.getElementById("navbar");
+    if (!navbarContainer) return;
 
-    navbar.innerHTML = `
-    <div class="nav-wrapper">
+    try {
+        const response = await fetch("components/navbar.html");
+        if (!response.ok) throw new Error("Failed to load navbar component");
+        
+        navbarContainer.innerHTML = await response.text();
 
-        <a href="#" class="logo">
-            <img src="assets/logo/logo.svg" alt="Entity">
-        </a>
+        // Check if page has a dark hero header
+        if (document.querySelector(".page-hero")) {
+            navbarContainer.classList.add("has-dark-hero");
+        }
 
-        <nav>
+        // Setup mobile menu toggle
+        const toggle = navbarContainer.querySelector(".menu-toggle");
+        if (toggle) {
+            toggle.addEventListener("click", () => {
+                navbarContainer.classList.toggle("mobile-open");
+            });
+        }
 
-            <ul class="nav-links">
+        // Close mobile menu on clicking any nav-link
+        const links = navbarContainer.querySelectorAll(".nav-link");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                navbarContainer.classList.remove("mobile-open");
+            });
+        });
 
-                <li><a href="index.html#hero">Home</a></li>
-
-                <li><a href="about.html">About</a></li>
-
-                <li><a href="index.html#services">Services</a></li>
-
-                <li><a href="projects.html">Projects</a></li>
-
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-        <a href="#" class="btn btn-dark">
-
-            Let's Talk
-
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            fill="none"
-            viewBox="0 0 24 24">
-
-            <path
-            d="M5 12H19"
-
-            stroke="currentColor"
-
-            stroke-width="2"
-
-            stroke-linecap="round"/>
-
-            <path
-
-            d="M12 5L19 12L12 19"
-
-            stroke="currentColor"
-
-            stroke-width="2"
-
-            stroke-linecap="round"
-
-            stroke-linejoin="round"/>
-
-            </svg>
-
-        </a>
-
-        <div class="menu-toggle">
-
-            <span></span>
-
-            <span></span>
-
-            <span></span>
-
-        </div>
-
-    </div>
-    `;
-
-    const menu = navbar.querySelector(".menu-toggle");
-
-    menu.addEventListener("click", () => {
-
-        navbar.classList.toggle("mobile-open");
-
-    });
-
-    window.addEventListener("scroll", () => {
-
-        navbar.classList.toggle(
-
-            "scrolled",
-
-            window.scrollY > 40
-
-        );
-
-    });
-
+        // Setup scrolled class on scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                navbarContainer.classList.add("scrolled");
+            } else {
+                navbarContainer.classList.remove("scrolled");
+            }
+        });
+        
+        // Initial scroll check
+        if (window.scrollY > 80) {
+            navbarContainer.classList.add("scrolled");
+        }
+    } catch (error) {
+        console.error("Navbar loading error:", error);
+    }
 }

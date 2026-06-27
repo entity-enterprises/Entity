@@ -71,11 +71,17 @@ Logo
 
     align-items:center;
 
+    gap:12px;
+
+    text-decoration:none;
+
 }
 
 .logo img{
 
-    width:170px;
+    height:42px;
+
+    width:auto;
 
     transition:.45s;
 
@@ -83,7 +89,37 @@ Logo
 
 #navbar.scrolled .logo img{
 
-    width:155px;
+    height:36px;
+
+}
+
+.logo-text{
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+    color:var(--clr-heading);
+
+    letter-spacing:0.08em;
+
+    text-transform:uppercase;
+
+    transition:color 0.35s, font-size 0.35s;
+
+}
+
+.logo-text-sub{
+
+    font-weight:300;
+
+    color:#666;
+
+}
+
+#navbar.scrolled .logo-text{
+
+    font-size:1.2rem;
 
 }
 
@@ -362,7 +398,24 @@ opacity:.45;
 .nav-links a:hover{
 
 opacity:1;
+position: relative;
+transition: color .35s ease;
 
+}
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#0D3B8C;
+    transition:width .35s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
 }
 
 }
@@ -441,4 +494,125 @@ transform:translateY(0);
 
 }
 
+}
+/*==========================================================
+
+PREMIUM NAVBAR
+
+==========================================================*/
+
+.navbar{
+
+transition:.45s ease;
+
+}
+
+.navbar-scrolled{
+
+background:rgba(6,22,41,.82);
+
+backdrop-filter:blur(20px);
+
+padding:12px 0;
+
+box-shadow:
+
+0 10px 35px rgba(0,0,0,.15);
+
+}
+
+.nav-link{
+
+position:relative;
+
+transition:.3s;
+
+}
+
+.nav-link::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:#2F80ED;
+
+transition:.35s;
+
+}
+
+.nav-link:hover::after,
+
+.nav-link.active::after{
+
+width:100%;
+
+}
+
+.nav-cta{
+
+padding:14px 28px;
+
+border-radius:999px;
+
+background:#2F80ED;
+
+color:white;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.nav-cta:hover{
+
+transform:translateY(-2px);
+
+background:#1f6fe0;
+
+}
+
+/*==========================================================
+Dark Hero Navbar Variant
+==========================================================*/
+
+#navbar.has-dark-hero:not(.scrolled) .nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#navbar.has-dark-hero:not(.scrolled) .nav-links a::after {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#navbar.has-dark-hero:not(.scrolled) .nav-links a:hover {
+    color: white;
+}
+
+#navbar.has-dark-hero:not(.scrolled) .nav-links a.active {
+    color: white;
+}
+
+#navbar.has-dark-hero:not(.scrolled) .logo img {
+    filter: brightness(0) invert(1);
+}
+
+#navbar.has-dark-hero:not(.scrolled) .logo-text {
+    color: white;
+}
+
+#navbar.has-dark-hero:not(.scrolled) .logo-text-sub {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#navbar.has-dark-hero:not(.scrolled) .menu-toggle span {
+    background: white;
 }

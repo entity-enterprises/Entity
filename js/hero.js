@@ -1,318 +1,161 @@
-/*=========================================================
-ENTITY ENTERPRISES
-Hero Controller
-=========================================================*/
+﻿/*==========================================================
+ENTITY HERO
+==========================================================*/
 
-function initHero() {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const tl = gsap.timeline({
+    initHeroParallax();
 
-        defaults: {
+    initHeroCounters();
 
-            ease: "power4.out"
+    initFloatingCard();
+
+});
+
+/*==========================================================
+
+Mouse Parallax
+
+==========================================================*/
+
+function initHeroParallax(){
+
+    const hero=document.querySelector(".hero");
+
+    const image=document.querySelector(".hero-image");
+
+    const card=document.querySelector(".floating-project-card");
+
+    if(!hero || !image) return;
+
+    hero.addEventListener("mousemove",(e)=>{
+
+        const rect=hero.getBoundingClientRect();
+
+        const x=(e.clientX-rect.left)/rect.width-.5;
+
+        const y=(e.clientY-rect.top)/rect.height-.5;
+
+        image.style.transform=`
+            translate(${x*20}px,${y*20}px)
+        `;
+
+        if(card){
+
+            card.style.transform=`
+                translate(${x*35}px,${y*35}px)
+            `;
 
         }
 
     });
 
-    /*======================================
-    Initial State
-    ======================================*/
+    hero.addEventListener("mouseleave",()=>{
 
-    gsap.set(".hero-label", {
+        image.style.transform="translate(0,0)";
 
-        opacity: 0,
+        if(card){
 
-        y: 30
+            card.style.transform="translate(0,0)";
 
-    });
-
-    gsap.set(".hero-title span", {
-
-        yPercent: 110
+        }
 
     });
 
-    gsap.set(".hero-description", {
+}
 
-        opacity: 0,
+/*==========================================================
 
-        y: 40
+Animated Counters
 
-    });
+==========================================================*/
 
-    gsap.set(".hero-buttons", {
+function initHeroCounters(){
 
-        opacity: 0,
+    const numbers=document.querySelectorAll(".hero-stat h2");
 
-        y: 40
+    if(!numbers.length) return;
 
-    });
+    const observer=new IntersectionObserver(entries=>{
 
-    gsap.set(".hero-building", {
+        entries.forEach(entry=>{
 
-        opacity: 0,
+            if(entry.isIntersecting){
 
-        scale: .92
+                animateCounter(entry.target);
 
-    });
+                observer.unobserve(entry.target);
 
-    gsap.set(".hero-blueprint", {
-
-        opacity: 0
-
-    });
-
-    gsap.set(".hero-grid", {
-
-        opacity: 0
-
-    });
-
-    gsap.set(".scroll-indicator", {
-
-        opacity: 0,
-
-        y: 20
-
-    });
-
-    /*======================================
-    Intro Timeline
-    ======================================*/
-
-    tl
-
-    .to(".hero-blueprint", {
-
-        opacity: 1,
-
-        duration: 1
-
-    })
-
-    .to(".hero-grid", {
-
-        opacity: 1,
-
-        duration: 1
-
-    }, "-=.8")
-
-    .to(".hero-building", {
-
-        opacity: 1,
-
-        scale: 1,
-
-        duration: 1.5
-
-    }, "-=.8")
-
-    .to(".hero-label", {
-
-        opacity: 1,
-
-        y: 0,
-
-        duration: .8
-
-    }, "-=1")
-
-    .to(".hero-title span", {
-
-        yPercent: 0,
-
-        stagger: .12,
-
-        duration: 1
-
-    }, "-=.7")
-
-    .to(".hero-description", {
-
-        opacity: 1,
-
-        y: 0,
-
-        duration: .8
-
-    }, "-=.6")
-
-    .to(".hero-buttons", {
-
-        opacity: 1,
-
-        y: 0,
-
-        duration: .8
-
-    }, "-=.5")
-
-    .to(".scroll-indicator", {
-
-        opacity: 1,
-
-        y: 0,
-
-        duration: .6
-
-    }, "-=.2");
-
-
-
-    /*======================================
-    Mouse Parallax
-    ======================================*/
-
-    const hero = document.querySelector(".hero");
-
-    if(hero){
-
-        hero.addEventListener("mousemove",(e)=>{
-
-            const x=(e.clientX/window.innerWidth-.5);
-
-            const y=(e.clientY/window.innerHeight-.5);
-
-            gsap.to(".hero-building",{
-
-                x:x*40,
-
-                y:y*20,
-
-                rotateY:x*6,
-
-                rotateX:-y*3,
-
-                duration:1.8,
-
-                ease:"power3.out"
-
-            });
-
-            gsap.to(".hero-blueprint",{
-
-                x:x*12,
-
-                y:y*12,
-
-                duration:2
-
-            });
-
-            gsap.to(".hero-light",{
-
-                x:x*80,
-
-                y:y*40,
-
-                duration:3
-
-            });
+            }
 
         });
 
-    }
+    },{
 
-
-    /*======================================
-    Floating Building
-    ======================================*/
-
-    gsap.to(".hero-building",{
-
-        y:-15,
-
-        repeat:-1,
-
-        yoyo:true,
-
-        duration:4,
-
-        ease:"sine.inOut"
+        threshold:.7
 
     });
 
+    numbers.forEach(n=>observer.observe(n));
 
-    /*======================================
-    Ambient Light
-    ======================================*/
+}
 
-    gsap.to(".hero-light",{
+function animateCounter(element){
 
-        scale:1.05,
+    const text=element.innerText;
 
-        repeat:-1,
+    const target=parseInt(text.replace(/\D/g,""));
 
-        yoyo:true,
+    const suffix=text.replace(/[0-9]/g,"");
 
-        duration:8,
+    let current=0;
 
-        ease:"sine.inOut"
+    const increment=Math.max(1,target/80);
 
-    });
+    const timer=setInterval(()=>{
 
+        current+=increment;
 
-    /*======================================
-    Scroll Animation
-    ======================================*/
+        if(current>=target){
 
-    window.addEventListener("scroll",()=>{
+            current=target;
 
-        const progress=Math.min(
+            clearInterval(timer);
 
-            window.scrollY/window.innerHeight,
+        }
 
-            1
+        element.innerText=Math.floor(current)+suffix;
 
-        );
+    },18);
 
-        gsap.to(".hero-content",{
+}
 
-            y:-progress*120,
+/*==========================================================
 
-            opacity:1-progress,
+Floating Card
 
-            duration:.25
+==========================================================*/
 
-        });
+function initFloatingCard(){
 
-        gsap.to(".hero-building",{
+    const card=document.querySelector(".floating-project-card");
 
-            y:-progress*60,
+    if(!card) return;
 
-            scale:1-progress*.08,
+    let direction=1;
 
-            duration:.25
+    let offset=0;
 
-        });
+    setInterval(()=>{
 
-        gsap.to(".hero-blueprint",{
+        offset+=0.15*direction;
 
-            opacity:.6-progress*.6,
+        card.style.marginTop=offset+"px";
 
-            duration:.25
+        if(offset>8) direction=-1;
 
-        });
+        if(offset<-8) direction=1;
 
-    });
-
-
-    /*======================================
-    Scroll Indicator
-    ======================================*/
-
-    gsap.to(".scroll-line::before",{
-
-        y:120,
-
-        repeat:-1,
-
-        duration:2,
-
-        ease:"none"
-
-    });
+    },16);
 
 }

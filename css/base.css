@@ -36,6 +36,7 @@ body{
     -webkit-font-smoothing:antialiased;
 
     -moz-osx-font-smoothing:grayscale;
+    
 
 }
 
@@ -112,46 +113,30 @@ Selection
 
 ==========================================================*/
 
-::selection{
-
-    background:var(--clr-primary);
-
-    color:white;
-
-}
-
-
-/*==========================================================
-
-Scrollbar
-
-==========================================================*/
 
 ::-webkit-scrollbar{
 
-    width:12px;
+width:10px;
 
 }
 
 ::-webkit-scrollbar-track{
 
-    background:#F5F5F5;
+background:#F4F4F4;
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:var(--clr-primary);
+background:#0D2346;
 
-    border-radius:999px;
-
-    border:3px solid #F5F5F5;
+border-radius:50px;
 
 }
 
 ::-webkit-scrollbar-thumb:hover{
 
-    background:#09192F;
+background:#184C84;
 
 }
 
@@ -208,12 +193,13 @@ Background Paper
     background:
 
     linear-gradient(
+        rgba(248, 250, 252, 0.95),
+        rgba(248, 250, 252, 0.98)
+    ),
+    linear-gradient(rgba(13, 59, 140, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 59, 140, 0.02) 1px, transparent 1px);
 
-        rgba(255,255,255,.94),
-
-        rgba(252,252,252,.96)
-
-    );
+    background-size: 100% 100%, 60px 60px, 60px 60px;
 
     z-index:-20;
 
