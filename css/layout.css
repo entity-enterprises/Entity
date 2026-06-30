@@ -1402,7 +1402,7 @@ grid-template-columns:1.1fr .9fr;
 
 align-items:center;
 
-gap:90px;
+gap:120px;
 
 margin:120px auto;
 
@@ -1464,7 +1464,7 @@ transform:scale(1.08);
 
 letter-spacing:.25em;
 
-font-size:.8rem;
+font-size:.9rem;
 
 color:#888;
 
@@ -1490,6 +1490,8 @@ color:#555;
 
 margin-bottom:35px;
 
+font-size:1.1rem;
+
 }
 
 .project-content ul{
@@ -1514,6 +1516,8 @@ padding-left:20px;
 
 position:relative;
 
+font-size:1.05rem;
+
 }
 
 .project-content li::before{
@@ -1533,6 +1537,46 @@ position:absolute;
 left:0;
 
 top:10px;
+
+}
+
+.project-content a{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:14px 28px;
+
+border:1.5px solid #0D3B8C;
+
+color:#0D3B8C;
+
+border-radius:999px;
+
+font-weight:600;
+
+font-size:0.9rem;
+
+text-decoration:none;
+
+transition:all 0.3s ease;
+
+margin-top:15px;
+
+width:fit-content;
+
+}
+
+.project-content a:hover{
+
+background:#0D3B8C;
+
+color:white;
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 20px rgba(13, 59, 140, 0.15);
 
 }
 
@@ -1661,23 +1705,55 @@ transform:scale(1.08);
 
 .timeline-content{
 
-padding-top:10px;
+background:#ffffff;
+
+padding:30px 40px;
+
+border-radius:16px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.02);
+
+border:1px solid rgba(8, 28, 58, 0.05);
+
+transition:all 0.4s ease;
+
+flex-grow:1;
+
+}
+
+.timeline-step.active .timeline-content{
+
+border-color:rgba(13, 59, 140, 0.15);
+
+box-shadow:0 20px 40px rgba(13, 59, 140, 0.06);
 
 }
 
 .timeline-content h3{
 
-font-size:2rem;
+font-size:1.5rem;
 
-margin-bottom:18px;
+margin-bottom:12px;
+
+color:#081C3A;
+
+font-weight:700;
 
 }
 
 .timeline-content p{
 
-line-height:1.9;
+font-size:1.05rem;
 
-color:#555;
+line-height:1.8;
+
+color:#5F6B7A;
+
+}
+
+.timeline-step.active .timeline-circle{
+
+box-shadow:0 0 25px rgba(13, 35, 70, 0.2);
 
 }
 
@@ -2177,7 +2253,33 @@ margin-bottom:12px;
 
 margin-bottom:28px;
 
-font-size:1.4rem;
+font-size:1.3rem;
+
+color:#ffffff;
+
+font-weight:700;
+
+position:relative;
+
+padding-bottom:8px;
+
+}
+
+.footer-column h3::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:30px;
+
+height:2px;
+
+background:#0D3B8C;
 
 }
 
