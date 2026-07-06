@@ -80,6 +80,13 @@ a{
 
 }
 
+a:focus-visible,
+button:focus-visible,
+.filter-btn:focus-visible {
+    outline: 2px solid var(--accent-color, #0D3B8C);
+    outline-offset: 4px;
+}
+
 img{
 
     display:block;
@@ -305,7 +312,51 @@ Utilities
 
 }
 
+/*==========================================================
 
+Accessibility & Navigation Utilities
+
+==========================================================*/
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+
+.breadcrumbs {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 10px 0 20px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.breadcrumbs a {
+    color: #60A5FA;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: white;
+}
+
+.breadcrumbs span {
+    color: #475569;
+}
 /*==========================================================
 
 Images

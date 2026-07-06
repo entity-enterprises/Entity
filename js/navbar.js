@@ -13,7 +13,7 @@ async function initNavbar() {
         navbarContainer.innerHTML = await response.text();
 
         // Check if page has a dark hero header
-        if (document.querySelector(".page-hero")) {
+        if (document.querySelector(".page-hero") || document.querySelector(".about-hero") || document.querySelector(".contact-hero")) {
             navbarContainer.classList.add("has-dark-hero");
         }
 

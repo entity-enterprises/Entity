@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://entityenterprises.in/</loc>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/hero/commercial-office-building-construction-entity.webp</image:loc>
+      <image:title>Entity Enterprises Modern Commercial Office Construction</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://entityenterprises.in/about</loc>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/hero/about-company.webp</image:loc>
+      <image:title>Entity Enterprises Corporate Headquarters building</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/about-hero-building.webp</image:loc>
+      <image:title>Entity Enterprises Architecture &amp; Construction Solutions</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://entityenterprises.in/projects</loc>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/ncism/entity-enterprises-ncism.webp</image:loc>
+      <image:title>National Commission for Indian System of Medicine Office Interior Delhi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/3m/entity-enterprises-3m.webp</image:loc>
+      <image:title>3M India Experience Centre Corporate Office Gurgaon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/Honda-Agra/entity-enterprises-honda-agra.webp</image:loc>
+      <image:title>Honda Cars Showroom Turnkey Interior Project Agra</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/Honda-Dilshad/entity-enterprises-honda-dilshad.webp</image:loc>
+      <image:title>Honda Cars Showroom Dilshad Garden Interior</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/Multani/entity-enterprises-multani-pharma.webp</image:loc>
+      <image:title>Multani Pharmaceuticals Industrial Building Civil Construction</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://entityenterprises.in/assets/projects/Ritu-KIA/entity-enterprises-kia-project.webp</image:loc>
+      <image:title>Kia Motors Showroom Office Interior Design</image:title>
+    </image:image>
+  </url>
+</urlset>

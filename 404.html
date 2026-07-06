@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Entity Enterprises</title>
+    
+    <meta name="robots" content="noindex, follow">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .error-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        .error-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+        .error-code {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent-color, #0D3B8C);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark, #0D2346);
+        }
+        .error-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted, #64748B);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        @media (max-width: 576px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-blueprint-grid">
+    <!-- Navbar Placeholder -->
+    <div id="navbar"></div>
+
+    <main>
+        <section class="error-section">
+            <div class="error-content">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Structure Not Found.</h1>
+                <p class="error-desc">
+                    The blueprint or page you are looking for does not exist or has been moved. Let's redirect you to solid ground.
+                </p>
+                <div class="error-actions">
+                    <a href="index.html" class="btn btn-primary">Go to Home</a>
+                    <a href="projects.html" class="btn btn-outline">Explore Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer"></div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pageTransitions.js"></script>
+</body>
+</html>

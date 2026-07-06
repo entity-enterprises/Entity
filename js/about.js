@@ -1,4 +1,4 @@
-﻿/*==========================================================
+/*==========================================================
 
 ABOUT PAGE
 
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 const cards=document.querySelectorAll(
 
-".mission-card,.value-card,.leader-card,.trust-card,.journey-item,.stat-box"
+".info-card,.leader-row-card,.journey-node,.value-item-card,.service-card"
 
 );
 

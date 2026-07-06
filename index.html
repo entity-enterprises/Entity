@@ -14,27 +14,32 @@
     
     <link rel="canonical" href="https://entityenterprises.in/">
     
+    <!-- Preloads -->
+    <link rel="preload" href="assets/logo/logo.webp" as="image" type="image/webp">
+    <link rel="preload" href="assets/projects/3M/entity-enterprises-project.webp" as="image" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Entity Enterprises">
+    <meta property="og:title" content="Entity Enterprises | Commercial Construction &amp; Turnkey Interiors">
     <meta property="og:description" content="Commercial Construction, Turnkey Interiors & Architectural Solutions Across India.">
-    <meta property="og:image" content="assets/seo/og-image.webp">
+    <meta property="og:image" content="assets/logo/logo.webp">
     <meta property="og:url" content="https://entityenterprises.in/">
     <meta property="og:site_name" content="Entity Enterprises">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Entity Enterprises">
+    <meta name="twitter:title" content="Entity Enterprises | Commercial Construction &amp; Turnkey Interiors">
     <meta name="twitter:description" content="Commercial Construction & Turnkey Interior Solutions Across India.">
-    <meta name="twitter:image" content="assets/seo/og-image.webp">
+    <meta name="twitter:image" content="assets/logo/logo.webp">
     
     <!-- Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon.png">
     <link rel="apple-touch-icon" href="assets/logo/favicon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
@@ -54,14 +59,66 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ConstructionBusiness",
-      "name": "Entity Enterprises",
-      "url": "https://entityenterprises.in",
-      "logo": "https://entityenterprises.in/assets/logo/logo.png",
-      "description": "Commercial construction, turnkey interiors and architectural solutions.",
-      "areaServed": "India",
-      "numberOfEmployees": "50-200",
-      "foundingDate": "2016"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://entityenterprises.in/#organization",
+          "name": "Entity Enterprises",
+          "url": "https://entityenterprises.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://entityenterprises.in/#logo",
+            "url": "https://entityenterprises.in/assets/logo/logo.webp",
+            "caption": "Entity Enterprises Logo"
+          },
+          "image": {
+            "@id": "https://entityenterprises.in/#logo"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/entity-enterprises"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://entityenterprises.in/#localbusiness",
+          "name": "Entity Enterprises",
+          "url": "https://entityenterprises.in/",
+          "logo": "https://entityenterprises.in/assets/logo/logo.webp",
+          "image": "https://entityenterprises.in/assets/hero/commercial-office-building-construction-entity.webp",
+          "description": "Entity Enterprises delivers premium commercial construction, turnkey interiors, architectural planning and industrial infrastructure solutions across India.",
+          "telephone": "+919810123456",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Okhla Industrial Area, Phase-III",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110020",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5355,
+            "longitude": 77.2639
+          },
+          "priceRange": "$$$"
+        },
+        {
+          "@type": "Service",
+          "name": "Commercial Construction",
+          "provider": {
+            "@id": "https://entityenterprises.in/#organization"
+          },
+          "description": "End-to-end commercial construction with a focus on safety, quality, and timely delivery."
+        },
+        {
+          "@type": "Service",
+          "name": "Turnkey Interiors",
+          "provider": {
+            "@id": "https://entityenterprises.in/#organization"
+          },
+          "description": "Functional, modern, and inspiring corporate office interiors tailored to your business."
+        }
+      ]
     }
     </script>
 </head>
@@ -166,7 +223,7 @@
                 </div>
 
                 <div class="hero-right">
-                    <img src="assets/projects/3M/entity-enterprises-project.jpg" alt="Entity Enterprises Modern Office Architecture Design" loading="eager" fetchpriority="high" decoding="async">
+                    <img src="assets/projects/3M/entity-enterprises-project.webp" alt="Entity Enterprises Modern Office Architecture Design" loading="eager" fetchpriority="high" decoding="async" width="800" height="600">
                 </div>
             </div>
 
@@ -223,20 +280,21 @@
                 </div>
                 <div class="client-marquee">
                     <div class="client-track">
-                        <img src="assets/clients/honda (2).png" alt="Honda" loading="lazy" decoding="async">
-                        <img src="assets/clients/3M Science Applied to Life.jpeg" alt="3M" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-KIA.png" alt="Kia" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-ATHER.jpeg" alt="Ather" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-Renault.png" alt="Renault" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-VI-JOHN.jpeg" alt="VI John" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-pepsico.png" alt="PepsiCo" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-TVS.png" alt="TVS" loading="lazy" decoding="async">
-                        <img src="assets/clients/entity-enterprises-BONN.png" alt="Bonn" loading="lazy" decoding="async">
+                        <img src="assets/clients/honda-2.webp" alt="Honda" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/3m-science-applied-to-life.webp" alt="3M" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-kia.webp" alt="Kia" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-ather.webp" alt="Ather" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-renault.webp" alt="Renault" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-vi-john.webp" alt="VI John" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-pepsico.webp" alt="PepsiCo" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-tvs.webp" alt="TVS" loading="lazy" decoding="async" width="120" height="50">
+                        <img src="assets/clients/entity-enterprises-bonn.webp" alt="Bonn" loading="lazy" decoding="async" width="120" height="50">
                     </div>
                 </div>
             </div>
         </section>
-<div class="cad-divider"><span class="cad-metadata">EE-DWG // SEC-02 // WHY ENTITY</span></div>
+
+
         <section class="why-entity-section bg-blueprint-grid" id="about">
             <div class="rotating-watermark-wrapper" style="right: 5%; top: 10%;">
                 <svg width="420" height="420" viewBox="0 0 200 200" fill="none" stroke="#0D3B8C" stroke-width="0.5" opacity="0.25">
@@ -259,15 +317,16 @@
                 <a href="about.html" class="why-entity-link">ABOUT ENTITY &nbsp;→</a>
             </div>
             <div class="why-entity-right">
-                <img src="assets/hero/Entity-01.png" alt="Entity Enterprises Commercial Office Construction">
+                <img src="assets/hero/entity-01.webp" alt="Entity Enterprises Commercial Office Construction" width="800" height="600" loading="lazy">
             </div>
         </div>
     </div>
 </section>
 
-        <div class="cad-divider white-bg"><span class="cad-metadata">EE-DWG // SEC-03 // CAPABILITIES</span></div>
+
+
         <!-- 4. SERVICES -->
-        <section class="capabilities-section">
+        <section class="capabilities-section" id="services">
             <div class="container">
                 <div class="capabilities-layout-new">
                     <!-- Left: label + heading + desc + link -->
@@ -282,52 +341,52 @@
                     <div class="capabilities-right-new">
                         <div class="cap-card">
                             <div class="cap-card-img">
-                                <img src="assets/projects/Multani/entity-enterprises-Multani-pharma.png" alt="Commercial Construction">
+                                <img src="assets/projects/Multani/entity-enterprises-multani-pharma.webp" alt="Commercial Construction" width="400" height="300" loading="lazy">
                             </div>
                             <div class="cap-card-body">
                                 <div class="cap-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"/></svg>
                                 </div>
-                                <h4>Commercial<br>Construction</h4>
+                                <h3>Commercial<br>Construction</h3>
                                 <p>End-to-end construction with a focus on safety, quality and timely delivery.</p>
                             </div>
                         </div>
 
                         <div class="cap-card">
                             <div class="cap-card-img">
-                                <img src="assets/projects/Honda-Dilshad/entity-enterprises-honda-dilshad.jpeg" alt="Turnkey Interiors">
+                                <img src="assets/projects/Honda-Dilshad/entity-enterprises-honda-dilshad.webp" alt="Turnkey Interiors" width="400" height="300" loading="lazy">
                             </div>
                             <div class="cap-card-body">
                                 <div class="cap-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 </div>
-                                <h4>Turnkey<br>Interiors</h4>
+                                <h3>Turnkey<br>Interiors</h3>
                                 <p>Functional, modern and inspiring interiors tailored to your business.</p>
                             </div>
                         </div>
 
                         <div class="cap-card">
                             <div class="cap-card-img">
-                                <img src="assets/projects/Ritu-KIA/entity_enterprises_kia_project.png" alt="Architecture & Design">
+                                <img src="assets/projects/Ritu-KIA/entity-enterprises-kia-project.webp" alt="Architecture & Design" width="400" height="300" loading="lazy">
                             </div>
                             <div class="cap-card-body">
                                 <div class="cap-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                                 </div>
-                                <h4>Architecture &<br>Design</h4>
+                                <h3>Architecture &<br>Design</h3>
                                 <p>Thoughtful design that combines aesthetics, functionality and value.</p>
                             </div>
                         </div>
 
                         <div class="cap-card">
                             <div class="cap-card-img">
-                                <img src="assets/projects/Ritu-KIA/Entity-Enterprises-ritu-kia.jpg" alt="Project Management">
+                                <img src="assets/projects/Ritu-KIA/entity-enterprises-ritu-kia.webp" alt="Project Management" width="400" height="300" loading="lazy">
                             </div>
                             <div class="cap-card-body">
                                 <div class="cap-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                                 </div>
-                                <h4>Project<br>Management</h4>
+                                <h3>Project<br>Management</h3>
                                 <p>Structured planning, transparent tracking and complete accountability.</p>
                             </div>
                         </div>
@@ -339,7 +398,8 @@
 
 
 
-        <div class="cad-divider"><span class="cad-metadata">EE-DWG // SEC-04 // FEATURED PROJECTS</span></div>
+
+
         <section class="featured-projects bg-blueprint-grid">
             <div class="projects-blueprint-line-y" style="left: 15%;"></div>
             <div class="projects-blueprint-line-y" style="left: 50%;"></div>
@@ -361,13 +421,13 @@ SELECTED PROJECTS
 
 </span>
 
-<h1 class="section-title">
+<h2 class="section-title">
 
 Building
 Landmarks
 Across India.
 
-</h1>
+</h2>
 
 </div>
 
@@ -383,7 +443,7 @@ and long-term performance.
 
 <div class="project-showcase">
                     <div class="project-image">
-                        <img src="assets/projects/ncism/entity_enterprises_NCISM.png" alt="NCISM" loading="lazy">
+                        <img src="assets/projects/ncism/entity-enterprises-ncism.webp" alt="NCISM" loading="lazy" width="800" height="600">
                     </div>
                     <div class="project-content">
                         <span class="project-category">Government Project</span>
@@ -391,15 +451,15 @@ and long-term performance.
                         <ul>
                             <li>
                                 <span>Client:</span>
-                                <strong>Government of India</strong>
+                                <strong>All India Ayurvedic Congress</strong>
                             </li>
                             <li>
                                 <span>Location:</span>
-                                <strong>New Delhi</strong>
+                                <strong>Punjabi Bagh, Delhi</strong>
                             </li>
                             <li>
                                 <span>Service:</span>
-                                <strong>Commercial Construction</strong>
+                                <strong>Office Interior</strong>
                             </li>
                         </ul>
                         <a href="projects.html">View Case Study →</a>
@@ -413,43 +473,43 @@ and long-term performance.
                         <ul>
                             <li>
                                 <span>Client:</span>
-                                <strong>3M India</strong>
+                                <strong>3M Science Applied to Life</strong>
                             </li>
                             <li>
                                 <span>Location:</span>
-                                <strong>Gurugram</strong>
+                                <strong>RMZ Infinity, Gurgaon</strong>
                             </li>
                             <li>
                                 <span>Service:</span>
-                                <strong>Turnkey Interior</strong>
+                                <strong>Office Interior</strong>
                             </li>
                         </ul>
                         <a href="projects.html">View Case Study →</a>
                     </div>
                     <div class="project-image">
-                        <img src="assets/projects/3m/entity_enterprises_3M.png" alt="3M" loading="lazy">
+                        <img src="assets/projects/3m/entity-enterprises-3m.webp" alt="3M" loading="lazy" width="800" height="600">
                     </div>
                 </div>
 
                 <div class="project-showcase">
                     <div class="project-image">
-                        <img src="assets/projects/Honda-Agra/entity-enterprises-honda-agra-02.jpg" alt="Honda" loading="lazy">
+                        <img src="assets/projects/Honda-Agra/entity-enterprises-honda-agra-02.webp" alt="Honda" loading="lazy" width="800" height="600">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Automobile</span>
-                        <h3>Honda Showroom Development</h3>
+                        <span class="project-category">Commercial Interior</span>
+                        <h3>Honda Cars Showroom</h3>
                         <ul>
                             <li>
                                 <span>Client:</span>
-                                <strong>Honda</strong>
+                                <strong>MGR Automobiles</strong>
                             </li>
                             <li>
                                 <span>Location:</span>
-                                <strong>Agra, India</strong>
+                                <strong>Agra, UP</strong>
                             </li>
                             <li>
                                 <span>Service:</span>
-                                <strong>Commercial Construction</strong>
+                                <strong>Commercial Interior</strong>
                             </li>
                         </ul>
                         <a href="projects.html">View All Projects →</a>
@@ -458,7 +518,8 @@ and long-term performance.
             </div>
         </section>
 
-        <div class="cad-divider"><span class="cad-metadata">EE-DWG // SEC-05 // WORKFLOW TIMELINE</span></div>
+
+
         <!-- 7. EXECUTION PROCESS -->
         <section class="process-section bg-blueprint-grid" id="process" style="position: relative; overflow: hidden; padding: 100px 0;">
             <!-- Dim 2D CAD background wireframes -->
@@ -506,7 +567,7 @@ and long-term performance.
                                     </svg>
                                 </div>
                                 <div class="workflow-feature-text">
-                                    <h4>Transparent at Every Step</h4>
+                                    <h3>Transparent at Every Step</h3>
                                     <p>Regular updates, complete visibility and clear communication.</p>
                                 </div>
                             </div>
@@ -520,7 +581,7 @@ and long-term performance.
                                     </svg>
                                 </div>
                                 <div class="workflow-feature-text">
-                                    <h4>Experienced Professionals</h4>
+                                    <h3>Experienced Professionals</h3>
                                     <p>Skilled architects, engineers and project managers.</p>
                                 </div>
                             </div>
@@ -532,7 +593,7 @@ and long-term performance.
                                     </svg>
                                 </div>
                                 <div class="workflow-feature-text">
-                                    <h4>Quality You Can Trust</h4>
+                                    <h3>Quality You Can Trust</h3>
                                     <p>Strict quality control and safety standards at every stage.</p>
                                 </div>
                             </div>
@@ -544,7 +605,7 @@ and long-term performance.
                                     </svg>
                                 </div>
                                 <div class="workflow-feature-text">
-                                    <h4>On-Time Delivery</h4>
+                                    <h3>On-Time Delivery</h3>
                                     <p>Efficient planning and proactive execution for timely handover.</p>
                                 </div>
                             </div>
@@ -579,7 +640,7 @@ and long-term performance.
                                         </svg>
                                     </div>
                                     <div class="timeline-card-text">
-                                        <h4>Planning & Strategy</h4>
+                                        <h3>Planning & Strategy</h3>
                                         <p>We study your requirements, analyze site conditions, budget and timelines to create the right plan.</p>
                                     </div>
                                 </div>
@@ -597,7 +658,7 @@ and long-term performance.
                                         </svg>
                                     </div>
                                     <div class="timeline-card-text">
-                                        <h4>Design & Modeling</h4>
+                                        <h3>Design & Modeling</h3>
                                         <p>Our architects and engineers create detailed drawings, 3D models and technical documentation.</p>
                                     </div>
                                 </div>
@@ -623,7 +684,7 @@ and long-term performance.
                                         </svg>
                                     </div>
                                     <div class="timeline-card-text">
-                                        <h4>Construction Phase</h4>
+                                        <h3>Construction Phase</h3>
                                         <p>On-site execution with strict quality checks, safety compliance and timely progress monitoring.</p>
                                     </div>
                                 </div>
@@ -640,7 +701,7 @@ and long-term performance.
                                         </svg>
                                     </div>
                                     <div class="timeline-card-text">
-                                        <h4>Interior Fit-Out</h4>
+                                        <h3>Interior Fit-Out</h3>
                                         <p>MEP, flooring, ceilings and custom interiors crafted with attention to detail and functionality.</p>
                                     </div>
                                 </div>
@@ -667,7 +728,7 @@ and long-term performance.
                                         </svg>
                                     </div>
                                     <div class="timeline-card-text">
-                                        <h4>Handover & Support</h4>
+                                        <h3>Handover & Support</h3>
                                         <p>Final inspection, documentation and handover with ongoing support for your peace of mind.</p>
                                     </div>
                                 </div>
@@ -678,7 +739,8 @@ and long-term performance.
             </div>
         </section>
 
-        <div class="cad-divider"><span class="cad-metadata">EE-DWG // SEC-06 // CALL TO ACTION</span></div>
+
+
         <section class="cta-section bg-blueprint-grid">
 
 <div class="container">
@@ -732,8 +794,8 @@ Explore Projects
 
     <!-- Floating Contact Bar -->
     <div class="floating-contact">
-        <a href="tel:+91XXXXXXXXXX">&#9742; Call</a>
-        <a href="https://wa.me/91XXXXXXXXXX">&#128172; WhatsApp</a>
+        <a href="tel:+919810123456">&#9742; Call</a>
+        <a href="https://wa.me/919810123456">&#128172; WhatsApp</a>
         <a href="contact.html">&#9993; Contact</a>
     </div>
 
