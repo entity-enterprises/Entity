@@ -1019,3 +1019,81 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* Redesigned Leadership Section Responsive Rules */
+@media (max-width: 1024px) {
+    .leadership-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .quote-box {
+        padding-left: 0;
+    }
+    .quote-icon {
+        display: none;
+    }
+    .leadership-cards {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .leadership-bottom-values {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leader-row-card {
+        flex-direction: column;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .leader-left-block {
+        flex: none;
+        width: 100%;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 0;
+    }
+    .leader-stats-strip {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px 10px;
+    }
+    .leader-img-wrapper {
+        height: 320px;
+    }
+    .leader-details {
+        margin-left: 0;
+        margin-top: -20px;
+        padding: 40px 25px 30px 25px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        clip-path: polygon(0 20px, 30px 0, calc(100% - 30px) 0, 100% 20px, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 20px, 30px 0, calc(100% - 30px) 0, 100% 20px, 100% 100%, 0 100%);
+    }
+    .leader-details::before {
+        clip-path: polygon(0 20px, 30px 0, calc(100% - 30px) 0, 100% 20px, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 20px, 30px 0, calc(100% - 30px) 0, 100% 20px, 100% 100%, 0 100%);
+    }
+    .leader-details::after {
+        inset: 2px 0 0 0;
+        clip-path: polygon(0 22px, 30px 2px, calc(100% - 30px) 2px, 100% 22px, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 22px, 30px 2px, calc(100% - 30px) 2px, 100% 22px, 100% 100%, 0 100%);
+    }
+}
+
+@media (max-width: 580px) {
+    .leadership-bottom-values {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .leader-stats-strip {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+

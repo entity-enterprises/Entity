@@ -254,10 +254,51 @@ ABOUT PAGE REDESIGN
 }
 
 /* 3. Leadership Section */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
 .about-leadership {
-    padding: 140px 0;
+    position: relative;
+    padding: 120px 0;
     background: #07182E;
     color: white;
+    overflow: hidden;
+}
+
+/* Background grid */
+.about-leadership::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(200, 162, 97, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 162, 97, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(circle at 75% 50%, black 25%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at 75% 50%, black 25%, transparent 85%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Wireframe Building Drawing */
+.about-leadership::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%) scale(1.1);
+    width: 500px;
+    height: 400px;
+    background-image: url('../assets/about/delivery_process_blueprint.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about-leadership .container {
+    position: relative;
+    z-index: 2;
 }
 
 .leadership-header {
@@ -265,7 +306,7 @@ ABOUT PAGE REDESIGN
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .lh-left .section-tag {
@@ -306,25 +347,36 @@ ABOUT PAGE REDESIGN
 }
 
 .leader-row-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     display: flex;
-    overflow: hidden;
-    align-items: center;
+    align-items: stretch;
+    gap: 0;
     transition: all 0.4s ease;
+    position: relative;
 }
 
 .leader-row-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.leader-left-block {
+    flex: 0 0 240px;
+    display: flex;
+    flex-direction: column;
+    background: #051325;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
 }
 
 .leader-img-wrapper {
-    flex: 0 0 200px;
-    height: 100%;
-    align-self: stretch;
+    width: 100%;
+    height: 290px;
+    position: relative;
 }
 
 .leader-img-wrapper img {
@@ -332,43 +384,253 @@ ABOUT PAGE REDESIGN
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: grayscale(10%) contrast(105%);
+}
+
+.leader-stats-strip {
+    flex: 1;
+    background: rgba(13, 35, 70, 0.75);
+    border-top: 1.5px solid rgba(200, 162, 97, 0.15);
+    padding: 22px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.leader-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(96, 165, 250, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #60A5FA;
+    background: rgba(13, 35, 70, 0.4);
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.leader-row-card:hover .stat-circle {
+    border-color: #C8A261;
+    color: #C8A261;
+    box-shadow: 0 0 10px rgba(200, 162, 97, 0.2);
+}
+
+.stat-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.stat-top-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #60A5FA;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.leader-row-card:hover .stat-top-val {
+    color: #C8A261;
+}
+
+.stat-svg-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #C8A261;
+    transition: all 0.3s ease;
+}
+
+.leader-row-card:hover .stat-svg-icon {
+    transform: scale(1.1);
+    stroke: #60A5FA;
+}
+
+.stat-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.3;
+    max-width: 140px;
 }
 
 .leader-details {
-    padding: 30px;
     flex: 1;
+    padding: 40px 40px 30px 65px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    margin-left: -35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* Redesign left diagonal shapes */
+.leader-details::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #C8A261;
+    z-index: -1;
+    clip-path: polygon(35px 0, 100% 0, 100% 100%, 35px 100%, 0 calc(100% - 70px), 0 70px);
+    -webkit-clip-path: polygon(35px 0, 100% 0, 100% 100%, 35px 100%, 0 calc(100% - 70px), 0 70px);
+    transition: all 0.4s ease;
+}
+
+.leader-details::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 2px;
+    background: #FFFFFF;
+    z-index: -1;
+    clip-path: polygon(36px 0, 100% 0, 100% 100%, 36px 100%, 2px calc(100% - 70px), 2px 70px);
+    -webkit-clip-path: polygon(36px 0, 100% 0, 100% 100%, 36px 100%, 2px calc(100% - 70px), 2px 70px);
+    transition: all 0.4s ease;
+}
+
+.leader-row-card:hover .leader-details::before {
+    background: #60A5FA;
+}
+
+.leader-details .leader-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #60A5FA;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
 }
 
 .leader-details h3 {
-    font-size: 1.4rem;
-    color: white;
-    margin-bottom: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #0D2346;
+    margin: 0 0 4px 0;
 }
 
-.leader-title {
+.leader-details .leader-title {
     display: block;
-    color: #60A5FA;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1E3A8A;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
 }
 
 .leader-details p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 12px;
+    color: #4B5563;
+    margin-bottom: 14px;
 }
 
-.leader-details p:last-child {
+.leader-details p:last-of-type {
     margin-bottom: 0;
+}
+
+.leader-signature {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.1rem;
+    color: #C8A261;
+    text-align: right;
+    margin-top: auto;
+    padding-top: 15px;
+    opacity: 0.85;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.leader-row-card:hover .leader-signature {
+    color: #0D2346;
+    opacity: 1;
+}
+
+/* Bottom values bar CSS */
+.leadership-bottom-values {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+    padding: 35px 40px;
+    background: rgba(13, 35, 70, 0.4);
+    border: 1.5px solid rgba(200, 162, 97, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.leadership-bottom-values:hover {
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.value-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(7, 24, 46, 0.6);
+    border: 1.5px solid #C8A261;
+    color: #60A5FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover .value-icon-circle {
+    transform: scale(1.1) rotate(10deg);
+    border-color: #60A5FA;
+    color: #C8A261;
+    background: #072446;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+}
+
+.value-text h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 4px 0;
+}
+
+.value-text p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
 }
 
 /* 4. Project Delivery Process Section */
 .about-process-section {
-    padding: 120px 0 100px;
+    padding: 140px 0 120px;
     background-color: #FAFBFD;
     position: relative;
     overflow: hidden;
@@ -378,9 +640,12 @@ ABOUT PAGE REDESIGN
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.18;
-    background-image: radial-gradient(#0D3B8C 0.8px, transparent 0.8px);
+    background-image: 
+        linear-gradient(rgba(200, 162, 97, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 162, 97, 0.04) 1px, transparent 1px);
     background-size: 24px 24px;
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
     pointer-events: none;
 }
 
@@ -465,16 +730,16 @@ ABOUT PAGE REDESIGN
 .process-timeline-container {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto 90px;
+    margin: 0 auto 30px;
     padding: 20px 0;
 }
 
 .timeline-svg-line {
     position: absolute;
-    top: 54px;
+    top: 80px;
     left: 0;
     width: 100%;
-    height: calc(100% - 100px);
+    height: 300px;
     z-index: 1;
     pointer-events: none;
 }
@@ -494,12 +759,12 @@ ABOUT PAGE REDESIGN
 }
 
 .timeline-row.row-1 {
-    margin-bottom: 80px;
+    margin-bottom: 85px;
 }
 
 .process-step-node {
     background: #FFFFFF;
-    border: 1px solid rgba(13, 35, 70, 0.05);
+    border: 1px solid rgba(200, 162, 97, 0.1);
     border-radius: 20px;
     padding: 36px 30px;
     position: relative;
@@ -508,18 +773,20 @@ ABOUT PAGE REDESIGN
     display: flex;
     flex-direction: column;
     z-index: 2;
+    min-height: 235px;
+    height: auto;
 }
 
 .process-step-node:hover {
-    transform: translateY(-6px);
-    border-color: rgba(200, 162, 97, 0.35);
-    box-shadow: 0 20px 45px rgba(13, 35, 70, 0.06);
+    transform: translateY(-8px);
+    border-color: rgba(200, 162, 97, 0.45);
+    box-shadow: 0 20px 40px rgba(13, 35, 70, 0.04), 0 1px 3px rgba(200, 162, 97, 0.1);
 }
 
 .node-top-bar {
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: space-between;
     margin-bottom: 24px;
     position: relative;
     z-index: 2;
@@ -540,14 +807,18 @@ ABOUT PAGE REDESIGN
 
 .process-step-node:hover .node-icon-bubble {
     background: #C8A261;
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(5deg);
 }
 
 .node-step-num {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.76rem;
     font-weight: 700;
     color: #C8A261;
+    background: rgba(200, 162, 97, 0.08);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
 }
 
 .node-content {
@@ -565,9 +836,14 @@ ABOUT PAGE REDESIGN
     font-size: 5rem;
     font-weight: 800;
     line-height: 1;
-    color: rgba(13, 35, 70, 0.025);
+    color: rgba(200, 162, 97, 0.02);
     pointer-events: none;
     z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.process-step-node:hover .node-bg-num {
+    color: rgba(200, 162, 97, 0.06);
 }
 
 .node-content h3 {
@@ -591,124 +867,38 @@ ABOUT PAGE REDESIGN
 
 .process-flow-connector {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     z-index: 2;
+    padding-top: 44px; /* Align center of 32px arrow to 60px bubble center */
 }
 
 .flow-arrow {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #FFFFFF;
-    border: 1px solid rgba(13, 35, 70, 0.05);
-    color: #94A3B8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-}
-
-.process-stats-strip {
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 35px 45px;
-    box-shadow: 0 15px 45px rgba(13, 35, 70, 0.035);
-    border: 1px solid rgba(13, 35, 70, 0.035);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 3;
-}
-
-.process-stats-grid {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-grow: 1;
-}
-
-.p-stat-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.p-stat-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(200, 162, 97, 0.08);
+    border: 1px solid rgba(200, 162, 97, 0.2);
     color: #C8A261;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.p-stat-info h4 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #0D2346;
-    margin: 0 0 2px;
-}
-
-.p-stat-info p {
-    font-size: 0.82rem;
-    color: #556B82;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.p-stats-cta {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    max-width: 540px;
-}
-
-.p-stats-cta p {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    color: #556B82;
-    margin: 0;
-}
-
-.p-cta-btn {
-    background: #0d2346;
-    color: #FFFFFF;
-    padding: 15px 28px;
-    border-radius: 999px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(13, 35, 70, 0.03);
     transition: all 0.3s ease;
-    white-space: nowrap;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    position: relative;
+    z-index: 5;
 }
 
-.p-cta-btn:hover {
-    background: #C8A261;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(200, 162, 97, 0.25);
-    color: #FFFFFF;
+.flow-arrow svg {
+    stroke: #C8A261;
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 1120px) {
-    .process-stats-grid {
-        gap: 30px;
-    }
+.process-step-node:hover + .process-flow-connector .flow-arrow svg {
+    transform: translateX(3px);
 }
 
 @media (max-width: 1024px) {
@@ -750,44 +940,12 @@ ABOUT PAGE REDESIGN
     .process-flow-connector {
         display: none;
     }
-    
-    .process-stats-strip {
-        flex-direction: column;
-        padding: 40px 30px;
-        gap: 35px;
-    }
-    
-    .process-stats-grid {
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 40px;
-    }
-    
-    .p-stats-cta {
-        max-width: 100%;
-        text-align: center;
-        flex-direction: column;
-        gap: 20px;
-    }
 }
 
 @media (max-width: 600px) {
     .timeline-row {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .process-stats-grid {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
-        width: fit-content;
-        margin: 0 auto;
-    }
-    
-    .p-stat-info p {
-        white-space: normal;
     }
 }
 
