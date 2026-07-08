@@ -369,7 +369,11 @@ ABOUT PAGE REDESIGN
 /* 4. Project Delivery Process Section */
 .about-journey {
     padding: 140px 0;
-    background: #FCFDFE;
+    background-color: #081C3A;
+    background-image: 
+        linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
     position: relative;
     overflow: hidden;
 }
@@ -382,15 +386,15 @@ ABOUT PAGE REDESIGN
 }
 
 .process-header .section-tag {
-    color: #0d2346;
+    color: #60A5FA;
 }
 
 .process-header .section-tag::before {
-    background: #0d2346;
+    background: #60A5FA;
 }
 
 .process-header .section-title {
-    color: #0d2346;
+    color: #FFFFFF;
 }
 
 .process-grid {
@@ -404,22 +408,26 @@ ABOUT PAGE REDESIGN
 }
 
 .process-card {
-    background: white;
-    border: 1px solid rgba(13, 35, 70, 0.08);
-    border-radius: 12px;
-    padding: 40px 30px 30px;
+    background: rgba(12, 37, 76, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(96, 165, 250, 0.12);
+    border-radius: 16px;
+    padding: 45px 30px 35px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(13, 35, 70, 0.02);
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
 .process-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(13, 59, 140, 0.15);
-    box-shadow: 0 12px 30px rgba(13, 59, 140, 0.06);
+    transform: translateY(-10px);
+    border-color: #60A5FA;
+    background: rgba(12, 37, 76, 0.85);
+    box-shadow: 
+        0 15px 35px rgba(8, 28, 58, 0.5),
+        0 0 25px rgba(96, 165, 250, 0.2);
 }
 
 .process-card-num {
@@ -427,48 +435,53 @@ ABOUT PAGE REDESIGN
     top: 24px;
     right: 24px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1;
-    color: rgba(13, 59, 140, 0.05);
-    transition: color 0.4s ease;
+    color: rgba(96, 165, 250, 0.08);
+    transition: all 0.4s ease;
+    -webkit-text-stroke: 1px rgba(96, 165, 250, 0.15);
 }
 
 .process-card:hover .process-card-num {
-    color: rgba(13, 59, 140, 0.12);
+    color: rgba(96, 165, 250, 0.2);
+    transform: scale(1.05);
 }
 
 .process-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 12px;
-    background: rgba(13, 59, 140, 0.05);
-    color: #0D3B8C;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: rgba(96, 165, 250, 0.08);
+    color: #60A5FA;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     transition: all 0.4s ease;
+    border: 1px solid rgba(96, 165, 250, 0.15);
 }
 
 .process-card:hover .process-icon {
-    background: #0D3B8C;
-    color: white;
+    background: #60A5FA;
+    color: #081C3A;
+    border-color: #60A5FA;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
 }
 
 .process-card h3 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #0d2346;
-    margin: 0 0 12px;
+    color: #FFFFFF;
+    margin: 0 0 14px;
     line-height: 1.4;
 }
 
 .process-card p {
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     line-height: 1.6;
-    color: #556B82;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
 }
 
