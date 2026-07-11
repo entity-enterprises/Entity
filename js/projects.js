@@ -18,10 +18,10 @@ const PROJECTS = [// â”€â”€ 01. OFFICE INTERIOR â”€â”€â”�
   { id:8,  name:"Honda Cars Showroom", shortName:"Honda ” Patparganj", location:"Patparganj, Delhi", client:"Capital Cars Pvt. Ltd.", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda Corporate Identity norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-patparganj.webp", images:["assets/projects/optimized/honda-showroom-patparganj-1.webp","assets/projects/optimized/honda-showroom-patparganj-2.webp"] , slug:"honda-showroom-patparganj"},
   { id:9,  name:"Honda Cars Showroom", shortName:"Honda ” Agra", location:"Agra, UP", client:"MGR Automobiles", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda Corporate Identity norms including civil, ceiling, flooring, lighting, painting, and branding works.", delivered:"A fully renovated Honda CI-compliant interior with standardized branding and premium finish.", image:"assets/projects/optimized/honda-showroom-agra.webp", images:["assets/projects/optimized/honda-showroom-agra-1.webp","assets/projects/optimized/honda-showroom-agra-2.webp","assets/projects/optimized/honda-showroom-agra-3.webp","assets/projects/optimized/honda-showroom-agra-4.webp","assets/projects/optimized/honda-showroom-agra-5.webp","assets/projects/optimized/honda-showroom-agra-6.webp","assets/projects/optimized/honda-showroom-agra-7.webp","assets/projects/optimized/honda-showroom-agra-8.webp","assets/projects/optimized/honda-showroom-agra-9.webp","assets/projects/optimized/honda-showroom-agra-10.webp","assets/projects/optimized/honda-showroom-agra-11.webp","assets/projects/optimized/honda-showroom-agra-12.webp","assets/projects/optimized/honda-showroom-agra-13.webp","assets/projects/optimized/honda-showroom-agra-14.webp","assets/projects/optimized/honda-showroom-agra-15.webp","assets/projects/optimized/honda-showroom-agra-16.webp","assets/projects/optimized/honda-showroom-agra-17.webp"] , slug:"honda-showroom-agra"},
   { id:10, name:"Honda Cars Showroom", shortName:"Honda ” Mathura", location:"Mathura, UP", client:"MGR Automobiles", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-mathura.webp" , slug:"honda-showroom-mathura"},
-  { id:11, name:"Honda Cars Showroom", shortName:"Honda ” Motinagar", location:"Motinagar, Delhi", client:"Ring Road Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-motinagar.webp" , slug:"honda-showroom-motinagar"},
+  { id:11, name:"Honda Cars Showroom", shortName:"Honda ” Motinagar", location:"Motinagar, Delhi", client:"Ring Road Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-gurgaon.webp" , slug:"honda-showroom-motinagar"},
   { id:12, name:"Honda Cars Showroom", shortName:"Honda ” Gurgaon", location:"Gurgaon, Haryana", client:"Ring Road Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-gurgaon.webp", images:["assets/projects/optimized/honda-showroom-gurgaon-1.webp","assets/projects/optimized/honda-showroom-gurgaon-2.webp","assets/projects/optimized/honda-showroom-gurgaon-3.webp","assets/projects/optimized/honda-showroom-gurgaon-4.webp","assets/projects/optimized/honda-showroom-gurgaon-5.webp"] , slug:"honda-showroom-gurgaon"},
-  { id:13, name:"Honda Cars Showroom", shortName:"Honda ” Peeragarhi", location:"Peeragarhi, Delhi", client:"Ring Road Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-peeragarhi.webp" , slug:"honda-showroom-peeragarhi"},
-  { id:14, name:"Honda Cars Showroom", shortName:"Honda ” Wazirpur", location:"Wazirpur, Delhi", client:"Courtesy Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-wazirpur.webp" , slug:"honda-showroom-wazirpur"},
+  { id:13, name:"Honda Cars Showroom", shortName:"Honda ” Peeragarhi", location:"Peeragarhi, Delhi", client:"Ring Road Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-gurgaon.webp" , slug:"honda-showroom-peeragarhi"},
+  { id:14, name:"Honda Cars Showroom", shortName:"Honda ” Wazirpur", location:"Wazirpur, Delhi", client:"Courtesy Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-gurgaon.webp" , slug:"honda-showroom-wazirpur"},
   { id:15, name:"Honda Cars Showroom", shortName:"Honda ” Rohtak", location:"Rohtak, Haryana", client:"Joy Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-rohtak.webp" , slug:"honda-showroom-rohtak"},
   { id:16, name:"Honda Cars Showroom", shortName:"Honda ” Hisar", location:"Hisar, Haryana", client:"Joy Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-hisar.webp" , slug:"honda-showroom-hisar"},
   { id:17, name:"Honda Cars Showroom", shortName:"Honda ” Faridabad", location:"Faridabad, Haryana", client:"Classic Honda", category:"commercial-interior", type:"Commercial Interior", scope:"Interior renovation as per Honda CI norms.", delivered:"A fully renovated Honda CI-compliant interior.", image:"assets/projects/optimized/honda-showroom-faridabad.webp" , slug:"honda-showroom-faridabad"},
@@ -89,13 +89,13 @@ function buildImgCard(p) {
       '<div class="pv2-slideshow">',
         '<div class="pv2-slideshow-track" style="--n: ' + p.images.length + ';">',
           p.images.map(function(imgSrc) {
-            return '<img src="' + imgSrc + '" alt="' + p.shortName + '" loading="lazy" width="400" height="300" onerror="this.parentElement.classList.add(\'no-img\')">';
+            return '<img src="/' + imgSrc + '" alt="' + p.shortName + '" loading="lazy" width="400" height="300" onerror="this.parentElement.classList.add(\'no-img\')">';
           }).join(''),
         '</div>',
       '</div>'
     ].join('');
   } else if (p.image) {
-    imgHTML = '<img src="' + p.image + '" alt="' + p.shortName + '" loading="lazy" width="400" height="300" onerror="this.parentElement.classList.add(\'no-img\')">';
+    imgHTML = '<img src="/' + p.image + '" alt="' + p.shortName + '" loading="lazy" width="400" height="300" onerror="this.parentElement.classList.add(\'no-img\')">';
   } else {
     imgHTML = '<div class="pv2-img-card-placeholder"></div>';
   }
@@ -193,7 +193,7 @@ function renderFeatured() {
   const counter = (featIdx + 1) + ' / ' + total;
 
   const imgHTML = p.image
-    ? '<img src="' + p.image + '" alt="' + p.name + '" loading="eager" width="800" height="600" fetchpriority="high">'
+    ? '<img src="/' + p.image + '" alt="' + p.name + '" loading="eager" width="800" height="600" fetchpriority="high">'
     : '<div class="pv2-feat-right-placeholder"></div>';
 
   const locIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
@@ -256,7 +256,7 @@ function openModal(id) {
       '<div class="pv2-modal-img-slider">',
         '<div class="pv2-modal-img-track" style="--n: ' + p.images.length + '; transform: translateX(0%);">',
           p.images.map(function(imgSrc) {
-            return '<div class="pv2-modal-slide"><img src="' + imgSrc + '" alt="' + p.name + '" width="800" height="500"></div>';
+            return '<div class="pv2-modal-slide"><img src="/' + imgSrc + '" alt="' + p.name + '" width="800" height="500"></div>';
           }).join(''),
         '</div>',
         '<button class="pv2-modal-slider-btn pv2-modal-slider-prev" aria-label="Previous image">&#8592;</button>',
@@ -269,7 +269,7 @@ function openModal(id) {
       '</div>'
     ].join('');
   } else if (p.image) {
-    imgHTML = '<div class="pv2-modal-img"><img src="' + p.image + '" alt="' + p.name + '" width="800" height="500"></div>';
+    imgHTML = '<div class="pv2-modal-img"><img src="/' + p.image + '" alt="' + p.name + '" width="800" height="500"></div>';
   } else {
     imgHTML = '<div class="pv2-modal-img"><div class="pv2-modal-img-ph"></div></div>';
   }
@@ -413,7 +413,7 @@ function renderCategoryShowcase(catKey) {
     const rowClass = isReverse ? 'category-showcase-row reverse' : 'category-showcase-row';
 
     const imgColHTML = p.image
-      ? '<div class="showcase-image-col"><img src="' + p.image + '" alt="' + p.name + '" loading="lazy"></div>'
+      ? '<div class="showcase-image-col"><img src="/' + p.image + '" alt="' + p.name + '" loading="lazy"></div>'
       : [
           '<div class="showcase-image-col">',
             '<div class="showcase-image-placeholder">',
