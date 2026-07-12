@@ -33,6 +33,32 @@ async function initNavbar() {
             });
         });
 
+        // Set active nav link dynamically
+        const updateActiveLink = () => {
+            const currentPath = window.location.pathname;
+            const currentHash = window.location.hash;
+            
+            links.forEach(link => {
+                const href = link.getAttribute("href");
+                link.classList.remove("active");
+                
+                if (href === "/#home" && (currentPath === "/" || currentPath === "/index.html" || currentPath === "") && currentHash !== "#services") {
+                    link.classList.add("active");
+                } else if (href === "/about" && currentPath.includes("about")) {
+                    link.classList.add("active");
+                } else if (href === "/#services" && currentHash === "#services") {
+                    link.classList.add("active");
+                } else if (href === "/projects" && currentPath.includes("projects")) {
+                    link.classList.add("active");
+                } else if (href === "/contact" && currentPath.includes("contact")) {
+                    link.classList.add("active");
+                }
+            });
+        };
+
+        updateActiveLink();
+        window.addEventListener("hashchange", updateActiveLink);
+
         // Setup scrolled class on scroll
         window.addEventListener("scroll", () => {
             if (window.scrollY > 80) {
